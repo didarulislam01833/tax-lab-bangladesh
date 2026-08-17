@@ -5,7 +5,7 @@ export default function Header() {
         <header className="w-full font-sans shadow-sm">
             <div className="bg-[#0B192C] text-white text-xs py-2 px-6 flex flex-wrap justify-between items-center">
                 <div>
-                    <span>📞 Mobile: 01960-226722 | 01726-415551</span>
+                    <span>📞 Mobile: 01960-226722</span>
                     <span className="ml-4 hidden md:inline">✉️ Email: taxlabbangladesh@gmail.com</span>
                 </div>
                 <div>

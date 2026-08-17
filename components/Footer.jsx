@@ -9,7 +9,7 @@ export default function Footer() {
                     <p className="text-xs mt-1">Empowering professionals through corporate legal & tax training.</p>
                 </div>
                 <div className="text-center md:text-right">
-                    <p>Contact: 01960-226722 | 01726-415551</p>
+                    <p>Contact: 01960-226722</p>
                     <p className="text-xs text-gray-500 mt-1">© {new Date().getFullYear()} TaxLab Bangladesh. All rights reserved.</p>
                 </div>
             </div>
