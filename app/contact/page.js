@@ -64,7 +64,7 @@ export default function Contact() {
                                 <div className="space-y-1">
                                     <h4 className="font-bold text-slate-900 text-base">Office Address</h4>
                                     <p className="text-slate-600 text-sm leading-relaxed">
-                                        Dhaka, Bangladesh
+                                        House-01, Road-16, Sector-07, Uttara, Dhaka-1230
                                     </p>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                                 </div>
                                 <div className="space-y-1">
                                     <h4 className="font-bold text-slate-900 text-base">Phone & WhatsApp</h4>
-                                    <p className="text-slate-600 text-sm">+880 1700-000000</p>
+                                    <p className="text-slate-600 text-sm">+880 1960226722</p>
                                     <p className="text-xs text-slate-400">Available Mon - Sat (9:00 AM - 8:00 PM)</p>
                                 </div>
                             </div>
@@ -88,8 +88,8 @@ export default function Contact() {
                                 </div>
                                 <div className="space-y-1">
                                     <h4 className="font-bold text-slate-900 text-base">Email Us</h4>
-                                    <p className="text-slate-600 text-sm">info@taxlabbangladesh.com</p>
-                                    <p className="text-slate-600 text-sm">support@taxlabbangladesh.com</p>
+
+                                    <p className="text-slate-600 text-sm">taxlabbangladesh@gmail.com</p>
                                 </div>
                             </div>
 
@@ -159,13 +159,10 @@ export default function Contact() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Consultation Subject</label>
+                                        <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Inquiry Category</label>
                                         <select className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm text-slate-700 bg-white">
-                                            <option>Personal Income Tax</option>
-                                            <option>Corporate Tax Compliance</option>
-                                            <option>VAT & VDS Advisory</option>
-                                            <option>Customs & HS Code</option>
-                                            <option>Upcoming Executive Training</option>
+                                            <option>Consultancy Service</option>
+                                            <option>Traning</option>
                                         </select>
                                     </div>
                                 </div>
