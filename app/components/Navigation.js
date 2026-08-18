@@ -94,7 +94,7 @@ export default function Navigation() {
 
                             {openDropdown === 'consultancy' && (
                                 <div className="absolute top-full left-0 mt-2 w-[22rem] bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
-                                    <Link href="/services/income-tax" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                    <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
                                         <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-[#0c7844]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-6 3v-3m-6 3h18M5 17h14M5 7h14M5 7v10M19 7v10" />
@@ -106,7 +106,7 @@ export default function Navigation() {
                                         </div>
                                     </Link>
 
-                                    <Link href="/services/vat" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                    <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
                                         <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -118,7 +118,7 @@ export default function Navigation() {
                                         </div>
                                     </Link>
 
-                                    <Link href="/services/rjsc" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                    <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
                                         <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -130,7 +130,7 @@ export default function Navigation() {
                                         </div>
                                     </Link>
 
-                                    <Link href="/services/corporate" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                    <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
                                         <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-[#0c7844]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -142,7 +142,7 @@ export default function Navigation() {
                                         </div>
                                     </Link>
 
-                                    <Link href="/services/trade-license" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                    <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
                                         <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -150,11 +150,11 @@ export default function Navigation() {
                                         </div>
                                         <div>
                                             <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">Licenses & Certificates</p>
-                                            <p className="text-xs text-slate-500">IRC, ERC, Trade, Fire, Factory & ISO Licenses</p>
+                                            <p className="text-xs text-slate-500">IRC, ERC, trade License, Fire License, Environment License, Factory License, ISO Certificate, Credit Rating & other licenses and Certificates</p>
                                         </div>
                                     </Link>
 
-                                    <Link href="/services/other" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                    <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
                                         <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -203,10 +203,13 @@ export default function Navigation() {
                                         </button>
                                         <div className="hidden group-hover/sub:block absolute left-full top-0 ml-1 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 py-2">
                                             <Link href="/act-rules/income-tax/act" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
-                                                Act
+                                                Income Tax Act, 2023
                                             </Link>
                                             <Link href="/act-rules/income-tax/sro" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
-                                                SRO
+                                                TDS Rules, 2026
+                                            </Link>
+                                            <Link href="/act-rules/income-tax/sro" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
+                                                SROs
                                             </Link>
                                         </div>
                                     </div>
@@ -224,10 +227,16 @@ export default function Navigation() {
                                         </button>
                                         <div className="hidden group-hover/sub:block absolute left-full top-0 ml-1 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 py-2">
                                             <Link href="/act-rules/vat/act" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
-                                                Act
+                                                Value Added  Tax & Supplementary Duty Act, 2012
                                             </Link>
                                             <Link href="/act-rules/vat/sro" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
-                                                SRO
+                                                Value Added  Tax & Supplementary Duty Rules, 2016
+                                            </Link>
+                                            <Link href="/act-rules/vat/sro" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
+                                                Forms
+                                            </Link>
+                                            <Link href="/act-rules/vat/sro" onClick={closeAll} className="block px-4 py-2 text-sm text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50 transition">
+                                                SROs
                                             </Link>
                                         </div>
                                     </div>

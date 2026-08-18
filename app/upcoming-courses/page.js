@@ -242,8 +242,8 @@ export default function UpcomingCourses() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === tab.id
-                                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/25 scale-105'
-                                    : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50'
+                                ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/25 scale-105'
+                                : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50'
                                 }`}
                         >
                             {tab.label}
