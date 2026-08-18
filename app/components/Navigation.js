@@ -77,8 +77,8 @@ export default function Navigation() {
                             <button
                                 onClick={() => toggleDropdown('consultancy')}
                                 className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition flex items-center gap-1 ${openDropdown === 'consultancy'
-                                        ? 'text-[#0c7844] bg-emerald-50'
-                                        : 'text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50'
+                                    ? 'text-[#0c7844] bg-emerald-50'
+                                    : 'text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50'
                                     }`}
                             >
                                 Consultancy Services
@@ -138,7 +138,7 @@ export default function Navigation() {
                                         </div>
                                         <div>
                                             <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">BIDA & Related Services</p>
-                                            <p className="text-xs text-slate-500">Setup, Visas, Logistics, Finance & Compliance</p>
+                                            <p className="text-xs text-slate-500">Setup & Registration, Visas & Employment, Operations & Logistics, Finance & Compliance & Support & Access</p>
                                         </div>
                                     </Link>
 
@@ -173,8 +173,8 @@ export default function Navigation() {
                             <button
                                 onClick={() => toggleDropdown('act-rules')}
                                 className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition flex items-center gap-1 ${openDropdown === 'act-rules'
-                                        ? 'text-[#0c7844] bg-emerald-50'
-                                        : 'text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50'
+                                    ? 'text-[#0c7844] bg-emerald-50'
+                                    : 'text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50'
                                     }`}
                             >
                                 Act & Rules
