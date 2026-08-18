@@ -27,7 +27,7 @@ export default function UpcomingCourses() {
             subtitle: 'Comprehensive prep for the NBR Income Tax Practitioner license exam.',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
-            price: '৳৮,৫০০',
+            price: '---',
             features: [
                 'Full NBR syllabus coverage',
                 'Previous year question analysis',
@@ -42,7 +42,7 @@ export default function UpcomingCourses() {
             subtitle: 'Targeted coaching to pass the NBR VAT Consultant licensing exam.',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
-            price: '৳৮,৫০০',
+            price: '---',
             features: [
                 'VAT & SD Act 2012 deep dive',
                 'Practical Mushak applications',
@@ -57,7 +57,7 @@ export default function UpcomingCourses() {
             subtitle: 'Practical training on LC, import-export operations, & banking rules.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৫,০০০',
+            price: '---',
             features: [
                 'L/C opening & document scrutiny',
                 'Incoterms 2020 & IRC/ERC rules',
@@ -72,7 +72,7 @@ export default function UpcomingCourses() {
             subtitle: 'Hands-on training on govt electronic procurement portal operations.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৪,৫০০',
+            price: '---',
             features: [
                 'e-GP contractor registration',
                 'Tender document preparation',
@@ -87,7 +87,7 @@ export default function UpcomingCourses() {
             subtitle: 'Breakdown of new direct & indirect tax amendments under Finance Act 2026.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৩,৫০০',
+            price: '---',
             features: [
                 'Income Tax & VAT rate changes',
                 'Corporate compliance impact',
@@ -102,7 +102,7 @@ export default function UpcomingCourses() {
             subtitle: 'Hands-on practical guide to personal and corporate return submission.',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
-            price: '৳৪,০০০',
+            price: '---',
             features: [
                 'Individual return filing (IT-11GA)',
                 'Corporate tax return preparation',
@@ -117,7 +117,7 @@ export default function UpcomingCourses() {
             subtitle: 'Step-by-step training on monthly VAT return preparation.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৪,০০০',
+            price: '----',
             features: [
                 'Mushak 9.1 return filing',
                 'Input tax credit adjustments',
@@ -132,7 +132,7 @@ export default function UpcomingCourses() {
             subtitle: 'Guide to Mushak 4.3 declaration, calculation, and NBR filing.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৩,৫০০',
+            price: '---',
             features: [
                 'Raw material cost calculation',
                 'Mushak 4.3 form filing',
@@ -147,7 +147,7 @@ export default function UpcomingCourses() {
             subtitle: 'Complete compliance management for withholding income tax deductions.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৪,০০০',
+            price: '---',
             features: [
                 'Applicable TDS rates 2023/2026',
                 'Monthly withholding return filing',
@@ -162,7 +162,7 @@ export default function UpcomingCourses() {
             subtitle: 'Practical guide to VDS deduction, certificate issuance & deposit rules.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৪,০০০',
+            price: '---',
             features: [
                 'VDS rate charts & exemptions',
                 'Mushak 6.3 & 6.6 issuance',
@@ -177,7 +177,7 @@ export default function UpcomingCourses() {
             subtitle: 'Mastery course covering all chapters and sections of Income Tax Law.',
             mode: 'Hybrid',
             status: 'Upcoming',
-            price: '৳৬,০০০',
+            price: '---',
             features: [
                 'Key provisions of Tax Act 2023',
                 'Heads of income calculations',
@@ -192,7 +192,7 @@ export default function UpcomingCourses() {
             subtitle: 'Framework covering VAT registration, registers, and litigation.',
             mode: 'Hybrid',
             status: 'Upcoming',
-            price: '৳৬,০০০',
+            price: '---',
             features: [
                 'VAT Act 2012 & Rules overview',
                 'Mushak registers (6.1, 6.2, 6.3)',
@@ -207,7 +207,7 @@ export default function UpcomingCourses() {
             subtitle: 'Practical guide for commercial & supply chain professionals.',
             mode: 'Online (Live)',
             status: 'Upcoming',
-            price: '৳৫,০০০',
+            price: '---',
             features: [
                 'HS Code & tariff schedules',
                 'Assessable value calculation',
