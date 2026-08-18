@@ -66,64 +66,72 @@ export default function Navigation() {
                                     : 'text-slate-600 hover:text-[#0c7844] hover:bg-emerald-50'
                                     }`}
                             >
-                                Consultancy & Advisory Service
+                                Consultancy Services
                                 <svg className={`w-4 h-4 transition-transform ${openDropdown === 'consultancy' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
 
                             {openDropdown === 'consultancy' && (
-                                <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
+                                <div className="absolute top-full left-0 mt-2 w-88 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
                                     <Link href="/services/income-tax" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
-                                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200">
+                                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 shrink-0">
                                             <svg className="w-4 h-4 text-[#0c7844]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-6 3v-3m-6 3h18M5 17h14M5 7h14M5 7v10M19 7v10" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">Income Tax Advisory</p>
-                                            <p className="text-xs text-slate-500">Corporate & Individual Tax Planning</p>
+                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">Income Tax Consultancy</p>
+                                            <p className="text-xs text-slate-500">Corporate & Individual Tax Planning & Return Filing</p>
                                         </div>
                                     </Link>
+
                                     <Link href="/services/vat" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
-                                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200">
+                                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 shrink-0">
                                             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">VAT & VDS Consultancy</p>
-                                            <p className="text-xs text-slate-500">Mushak, Registration & Compliance</p>
+                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">VAT Consultancy</p>
+                                            <p className="text-xs text-slate-500">VAT Compliance, Return Filing, Book Keeping & Co-Efficient Declaration</p>
                                         </div>
                                     </Link>
-                                    <Link href="/services/customs" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
-                                        <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center group-hover:bg-teal-200">
+
+                                    <Link href="/services/rjsc" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center group-hover:bg-teal-200 shrink-0">
                                             <svg className="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">Customs & Trade Law</p>
-                                            <p className="text-xs text-slate-500">Import-Export & HS Code</p>
-                                        </div>
-                                    </Link>
-                                    <Link href="/services/corporate" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
-                                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200">
-                                            <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">Corporate Legal Advisory</p>
-                                            <p className="text-xs text-slate-500">Company Formation & Compliance</p>
+                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">RJSC & Company Affairs</p>
+                                            <p className="text-xs text-slate-500">Registration, Return Filing, Share Transfer & Winding Up etc.</p>
                                         </div>
                                     </Link>
-                                    <div className="border-t border-slate-100 my-1"></div>
-                                    <Link href="/services" className="flex items-center justify-between px-4 py-3 hover:bg-emerald-50 transition group">
-                                        <span className="text-sm font-semibold text-[#0c7844]">View All Services</span>
-                                        <svg className="w-4 h-4 text-[#0c7844] group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                        </svg>
+
+                                    <Link href="/services/corporate" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 shrink-0">
+                                            <svg className="w-4 h-4 text-[#0c7844]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">BIDA & Related Services</p>
+                                            <p className="text-xs text-slate-500">Setup & Registration, Visas & Employment, Operations & Logistics, Finance & Compliance & Support & Access</p>
+                                        </div>
+                                    </Link>
+
+                                    <Link href="/services/trade-license" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 shrink-0">
+                                            <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-semibold text-slate-900 group-hover:text-[#0c7844]">Trade License & Other Licenses</p>
+                                            <p className="text-xs text-slate-500">Issuance & Renewal Support</p>
+                                        </div>
                                     </Link>
                                 </div>
                             )}
@@ -146,8 +154,8 @@ export default function Navigation() {
 
                             {openDropdown === 'incometax' && (
                                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
-                                    <Link href="/income-tax/overview" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/income-tax/overview" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
@@ -157,8 +165,8 @@ export default function Navigation() {
                                             <p className="text-xs text-slate-500">Key Provisions & Updates</p>
                                         </div>
                                     </Link>
-                                    <Link href="/income-tax/filing" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/income-tax/filing" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
@@ -168,8 +176,8 @@ export default function Navigation() {
                                             <p className="text-xs text-slate-500">IT-11GA & Corporate Returns</p>
                                         </div>
                                     </Link>
-                                    <Link href="/income-tax/tds" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/income-tax/tds" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
@@ -200,8 +208,8 @@ export default function Navigation() {
 
                             {openDropdown === 'vat' && (
                                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
-                                    <Link href="/vat/overview" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/vat/overview" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
@@ -211,8 +219,8 @@ export default function Navigation() {
                                             <p className="text-xs text-slate-500">VAT Act 2012 Key Points</p>
                                         </div>
                                     </Link>
-                                    <Link href="/vat/registration" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/vat/registration" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                                             </svg>
@@ -222,8 +230,8 @@ export default function Navigation() {
                                             <p className="text-xs text-slate-500">VAT Registration Process</p>
                                         </div>
                                     </Link>
-                                    <Link href="/vat/mushak" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/vat/mushak" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                             </svg>
@@ -233,8 +241,8 @@ export default function Navigation() {
                                             <p className="text-xs text-slate-500">Mushak 9.1 & 4.3 Filing</p>
                                         </div>
                                     </Link>
-                                    <Link href="/vat/vds" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition">
-                                        <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                    <Link href="/vat/vds" className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition group">
+                                        <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
@@ -310,17 +318,21 @@ export default function Navigation() {
                                     <Link href="/services/income-tax" className="block text-sm text-slate-600 hover:text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
                                         Income Tax Advisory
                                     </Link>
+
                                     <Link href="/services/vat" className="block text-sm text-slate-600 hover:text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
-                                        VAT & VDS Consultancy
+                                        VAT Consultancy
                                     </Link>
-                                    <Link href="/services/customs" className="block text-sm text-slate-600 hover:text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
-                                        Customs & Trade Law
+
+                                    <Link href="/services/rjsc" className="block text-sm text-slate-600 hover:text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
+                                        RJSC & Company Affairs
                                     </Link>
+
                                     <Link href="/services/corporate" className="block text-sm text-slate-600 hover:text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
-                                        Corporate Legal Advisory
+                                        BIDA & Related Services
                                     </Link>
-                                    <Link href="/services" className="block text-sm font-semibold text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
-                                        View All Services →
+
+                                    <Link href="/services/trade-license" className="block text-sm text-slate-600 hover:text-[#0c7844] py-2 px-4 hover:bg-emerald-50 rounded-xl transition">
+                                        Trade License & Other Licenses
                                     </Link>
                                 </div>
                             )}
