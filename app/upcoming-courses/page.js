@@ -18,6 +18,7 @@ import {
 export default function UpcomingCourses() {
     const [activeTab, setActiveTab] = useState('all');
     const [selectedCourse, setSelectedCourse] = useState(null);
+    const [showEnrollMessage, setShowEnrollMessage] = useState(false); // NEW
 
     const courses = [
         {
@@ -221,6 +222,15 @@ export default function UpcomingCourses() {
         ? courses
         : courses.filter(c => c.category === activeTab);
 
+    // NEW: Handle Enroll Click - Shows simple text message
+    const handleEnrollClick = () => {
+        setShowEnrollMessage(true);
+        // Auto hide after 3 seconds
+        setTimeout(() => {
+            setShowEnrollMessage(false);
+        }, 3000);
+    };
+
     return (
         <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 relative font-sans overflow-hidden">
 
@@ -396,14 +406,23 @@ export default function UpcomingCourses() {
                             </ul>
                         </div>
 
-                        {/* Single Action Button: Enroll Now */}
-                        <div className="pt-2">
-                            <Link
-                                href="/contact"
+                        {/* Enroll Now Button - UPDATED with simple message */}
+                        <div className="pt-2 relative">
+                            <button
+                                onClick={handleEnrollClick}
                                 className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
                             >
                                 Enroll Now <ArrowRight className="w-4 h-4" />
-                            </Link>
+                            </button>
+
+                            {/* NEW: Simple text message shown below the button */}
+                            {showEnrollMessage && (
+                                <div className="mt-3 text-center animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                    <p className="text-emerald-400 font-bold text-sm tracking-wide">
+                                        Enrollment Coming Soon!
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
