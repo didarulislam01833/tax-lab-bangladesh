@@ -7,14 +7,13 @@ import {
     Users,
     CheckCircle2,
     ArrowRight,
-    Award,
     X,
     BookOpen,
-    Tag,
     Sparkles,
     ChevronRight,
     Clock,
-    ShieldCheck
+    ShieldCheck,
+    Tag
 } from 'lucide-react';
 
 export default function UpcomingCourses() {
@@ -232,23 +231,19 @@ export default function UpcomingCourses() {
     };
 
     return (
-        <main className="min-h-screen bg-slate-950 text-slate-100 relative font-sans overflow-hidden py-12">
-
-            {/* Ambient Glow Effects */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none -z-10" />
-            <div className="absolute top-1/3 right-10 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full pointer-events-none -z-10" />
+        <main className="min-h-screen bg-slate-50 text-slate-900 font-sans py-12">
 
             {/* Header Section */}
-            <section className="relative pt-8 pb-12 px-6 sm:px-10 max-w-5xl mx-auto text-center space-y-4">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full text-xs font-semibold shadow-inner">
-                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" /> Executive Development Programs
+            <section className="pt-8 pb-10 px-6 sm:px-10 max-w-5xl mx-auto text-center space-y-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-full text-xs font-semibold shadow-sm">
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" /> Executive Development Programs
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
                     Practical NBR & Tax Training
                 </h1>
 
-                <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                     Interactive professional programs designed for Tax Practitioners, Accountants, and Finance Executives.
                 </p>
 
@@ -265,9 +260,9 @@ export default function UpcomingCourses() {
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 ${activeTab === tab.id
-                                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20 scale-105'
-                                    : 'bg-slate-900/90 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80 border border-slate-800'
+                            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 ${activeTab === tab.id
+                                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20 scale-105'
+                                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm'
                                 }`}
                         >
                             {tab.label}
@@ -276,75 +271,72 @@ export default function UpcomingCourses() {
                 </div>
             </section>
 
-            {/* Enhanced Course Cards Grid */}
-            <section className="pb-24 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+            {/* Clean Light-Theme Course Cards Grid */}
+            <section className="pb-20 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {filteredCourses.map((course) => (
                         <div
                             key={course.id}
-                            className="group relative bg-slate-900/70 backdrop-blur-xl border border-slate-800/80 hover:border-emerald-500/50 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-emerald-500/10"
+                            className="group bg-white border border-slate-200 hover:border-emerald-500 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                         >
-                            {/* Card Top Highlight Bar */}
-                            <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
                             <div className="space-y-4">
                                 {/* Badges Row */}
                                 <div className="flex items-center justify-between gap-2">
-                                    <span className="px-2.5 py-1 bg-slate-800/80 text-slate-300 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-slate-700/60">
+                                    <span className="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-extrabold uppercase tracking-wider border border-slate-200">
                                         {course.category}
                                     </span>
-                                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                        <Clock className="w-3 h-3" /> {course.status}
+                                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                        <Clock className="w-3 h-3 text-emerald-600" /> {course.status}
                                     </span>
                                 </div>
 
                                 {/* Course Title & Description */}
                                 <div>
-                                    <h3 className="text-base font-bold text-white group-hover:text-emerald-400 transition-colors duration-200 leading-snug">
+                                    <h3 className="text-base font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors duration-200 leading-snug">
                                         {course.title}
                                     </h3>
-                                    <p className="text-slate-400 text-xs leading-relaxed mt-2 line-clamp-2">
+                                    <p className="text-slate-600 text-xs leading-relaxed mt-2 line-clamp-2">
                                         {course.subtitle}
                                     </p>
                                 </div>
 
                                 {/* Key Highlights Quick Preview */}
-                                <div className="pt-2 space-y-1.5 border-t border-slate-800/60">
+                                <div className="pt-3 space-y-2 border-t border-slate-100">
                                     {course.features.slice(0, 2).map((feat, i) => (
-                                        <div key={i} className="flex items-center gap-2 text-[11px] text-slate-300 truncate">
-                                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                                            <span className="truncate">{feat}</span>
+                                        <div key={i} className="flex items-center gap-2 text-xs text-slate-700 truncate">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                                            <span className="truncate font-medium">{feat}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 {/* Schedule & Mode */}
-                                <div className="pt-3 border-t border-slate-800/60 text-xs text-slate-400 space-y-2">
+                                <div className="pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-2">
                                     <div className="flex items-center justify-between text-[11px]">
-                                        <span className="flex items-center gap-1.5 text-slate-400">
-                                            <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" /> Starts: <strong className="text-slate-200">TBA</strong>
+                                        <span className="flex items-center gap-1.5 text-slate-600">
+                                            <Calendar className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Starts: <strong className="text-slate-900">TBA</strong>
                                         </span>
-                                        <span className="flex items-center gap-1.5 text-slate-400">
-                                            <Users className="w-3.5 h-3.5 text-slate-500 shrink-0" /> {course.mode}
+                                        <span className="flex items-center gap-1.5 text-slate-600">
+                                            <Users className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> {course.mode}
                                         </span>
                                     </div>
 
                                     {/* Pricing Info */}
                                     <div className="flex items-center justify-between pt-1">
-                                        <span className="text-[11px] text-slate-400 font-medium">Course Fee:</span>
-                                        <span className="text-sm font-extrabold text-emerald-400 flex items-center gap-1">
-                                            <Tag className="w-3.5 h-3.5 text-emerald-400" />
+                                        <span className="text-[11px] text-slate-500 font-medium">Course Fee:</span>
+                                        <span className="text-sm font-extrabold text-emerald-600 flex items-center gap-1">
+                                            <Tag className="w-3.5 h-3.5" />
                                             {course.price}
                                         </span>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Action Button */}
-                            <div className="pt-5 mt-4 border-t border-slate-800/80">
+                            {/* High Contrast Action Button */}
+                            <div className="pt-4 mt-4 border-t border-slate-100">
                                 <button
                                     onClick={() => setSelectedCourse(course)}
-                                    className="w-full py-2.5 px-4 bg-slate-800/90 hover:bg-emerald-500 text-slate-200 hover:text-slate-950 font-bold rounded-xl text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-slate-700/80 group-hover:border-emerald-500/50 shadow-sm"
+                                    className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition-all duration-200 flex items-center justify-center gap-2 shadow-sm"
                                 >
                                     <span>See Details & Curriculum</span>
                                     <ChevronRight className="w-4 h-4" />
@@ -355,81 +347,76 @@ export default function UpcomingCourses() {
                 </div>
             </section>
 
-            {/* Details & Syllabus Modal */}
+            {/* Details Modal */}
             {selectedCourse && (
                 <div
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
                     onClick={() => setSelectedCourse(null)}
                 >
                     <div
-                        className="bg-slate-900 border border-slate-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 space-y-6 relative shadow-2xl text-slate-100"
+                        className="bg-white border border-slate-200 w-full max-w-lg rounded-3xl p-6 sm:p-8 space-y-6 relative shadow-2xl text-slate-900"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close Button */}
                         <button
                             onClick={() => setSelectedCourse(null)}
-                            className="absolute top-5 right-5 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition"
+                            className="absolute top-5 right-5 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition"
                         >
                             <X className="w-4 h-4" />
                         </button>
 
-                        {/* Modal Header */}
                         <div className="space-y-2 pr-6">
                             <div className="flex items-center gap-2">
-                                <span className="px-2.5 py-0.5 bg-slate-800 text-slate-300 rounded-md text-[10px] font-semibold uppercase tracking-wider border border-slate-700">
+                                <span className="px-2.5 py-0.5 bg-slate-100 text-slate-800 rounded-md text-[10px] font-bold uppercase tracking-wider border border-slate-200">
                                     {selectedCourse.category}
                                 </span>
-                                <span className="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <span className="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                                     {selectedCourse.status}
                                 </span>
                             </div>
-                            <h2 className="text-lg sm:text-xl font-bold text-white leading-snug">
+                            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug">
                                 {selectedCourse.title}
                             </h2>
-                            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                                 {selectedCourse.subtitle}
                             </p>
                         </div>
 
-                        {/* Mode & Pricing Summary */}
-                        <div className="flex items-center justify-between p-4 bg-slate-800/50 rounded-2xl border border-slate-700/50 text-xs">
+                        <div className="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs">
                             <div>
-                                <span className="text-slate-400 block text-[11px]">Learning Mode</span>
-                                <span className="text-slate-200 font-bold">{selectedCourse.mode}</span>
+                                <span className="text-slate-500 block text-[11px]">Learning Mode</span>
+                                <span className="text-slate-900 font-bold">{selectedCourse.mode}</span>
                             </div>
                             <div className="text-right">
-                                <span className="text-slate-400 block text-[11px]">Course Fee</span>
-                                <span className="text-base font-extrabold text-emerald-400">{selectedCourse.price}</span>
+                                <span className="text-slate-500 block text-[11px]">Course Fee</span>
+                                <span className="text-base font-extrabold text-emerald-600">{selectedCourse.price}</span>
                             </div>
                         </div>
 
-                        {/* Key Curriculum Highlights */}
                         <div className="space-y-3">
-                            <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                                <BookOpen className="w-4 h-4 text-emerald-400" /> What You Will Learn
+                            <h4 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                <BookOpen className="w-4 h-4 text-emerald-600" /> What You Will Learn
                             </h4>
                             <ul className="space-y-2.5">
                                 {selectedCourse.features.map((feature, idx) => (
-                                    <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-300 leading-relaxed">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                        <span>{feature}</span>
+                                    <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 leading-relaxed">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                        <span className="font-medium">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        {/* Action & Status */}
                         <div className="pt-2 relative">
                             <button
                                 onClick={handleEnrollClick}
-                                className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-center text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
+                                className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-center text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20"
                             >
                                 Enroll Now <ArrowRight className="w-4 h-4" />
                             </button>
 
                             {showEnrollMessage && (
                                 <div className="mt-3 text-center animate-in fade-in slide-in-from-bottom-2 duration-300">
-                                    <p className="text-emerald-400 font-bold text-sm tracking-wide">
+                                    <p className="text-emerald-700 font-bold text-sm tracking-wide">
                                         Enrollment Coming Soon!
                                     </p>
                                 </div>
@@ -440,23 +427,23 @@ export default function UpcomingCourses() {
             )}
 
             {/* Certification Footer Banner */}
-            <section className="pb-16 px-6 sm:px-10 max-w-7xl mx-auto">
-                <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800/80 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <section className="pb-12 px-6 sm:px-10 max-w-7xl mx-auto">
+                <div className="bg-white border border-slate-200 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
                     <div className="space-y-1.5 text-center md:text-left">
-                        <div className="inline-flex items-center gap-1.5 text-emerald-400 font-bold text-xs">
+                        <div className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs">
                             <ShieldCheck className="w-4 h-4" /> Verified Certification
                         </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-white">
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
                             Earn an Industry-Recognized Certificate
                         </h3>
-                        <p className="text-slate-400 text-xs sm:text-sm max-w-xl">
+                        <p className="text-slate-600 text-xs sm:text-sm max-w-xl">
                             Upon successful completion of practical assignments & assessment, participants receive a verified certificate from TaxLab Bangladesh.
                         </p>
                     </div>
 
                     <Link
                         href="/contact"
-                        className="shrink-0 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl text-xs transition shadow-md"
+                        className="shrink-0 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-xs transition shadow-md"
                     >
                         Contact Course Advisor
                     </Link>
