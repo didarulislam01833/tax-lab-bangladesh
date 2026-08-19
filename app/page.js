@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   Users,
   FileCheck2,
-  Sparkles,
   GraduationCap,
   MessageSquareQuote,
   ChevronRight,
@@ -15,6 +14,8 @@ import {
   ReceiptText,
   Headphones,
   Quote,
+  Building2,
+  Anchor,
 } from 'lucide-react';
 
 export default function Home() {
@@ -107,23 +108,15 @@ export default function Home() {
           <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Hero Left */}
             <div className="text-center lg:text-left">
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-emerald-300 backdrop-blur-md">
-                <Sparkles className="h-4 w-4" />
-                Professional Tax, VAT & Customs Training
-              </div>
+              {/* Animated & Styled Main Heading */}
 
-              <h1 className="text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-                Master Tax, VAT &{' '}
-                <span className="block bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
+              <h1 className="text-xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl xl:text-5xl">
+                Master Tax, VAT
+                <span className="mt-2 block bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-[length:200%_auto] bg-clip-text text-transparent transition-all duration-500 hover:bg-right">
                   Customs with Practical Training
                 </span>
               </h1>
 
-              <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg lg:mx-0">
-                Build real-world expertise in Bangladesh Tax, VAT, Customs and
-                Corporate Compliance through practical, professional and
-                career-focused training programs.
-              </p>
 
               {/* CTA Buttons */}
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -147,7 +140,7 @@ export default function Home() {
               {/* Trust Points */}
               <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-3 border-t border-white/10 pt-7 sm:grid-cols-2 lg:mx-0">
                 {[
-                  'Bangladesh-focused training',
+                  'Career based training',
                   'Practical case-based learning',
                   'Experienced professionals',
                   'Corporate training available',
@@ -170,37 +163,36 @@ export default function Home() {
               <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl backdrop-blur-xl sm:p-8">
                 <div className="mb-7 flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300">
-                      TaxLab Learning
-                    </p>
-                    <h3 className="mt-1 text-xl font-bold">
-                      Practical Professional Skills
+                    <h3 className="text-xl font-bold text-white sm:text-2xl">
+                      Elevate Your Professional Expertise
                     </h3>
                   </div>
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/15">
                     <GraduationCap className="h-6 w-6 text-emerald-300" />
                   </div>
                 </div>
+
 
                 <div className="space-y-3">
                   {[
                     {
                       icon: Calculator,
                       title: 'Income Tax',
-                      text: 'Law, calculation & compliance',
                     },
                     {
                       icon: ReceiptText,
-                      title: 'VAT & Mushak',
-                      text: 'VAT, VDS & practical documentation',
+                      title: 'Value Added Tax (VAT)',
                     },
                     {
-                      icon: FileCheck2,
-                      title: 'Corporate Compliance',
-                      text: 'Practical business compliance',
+                      icon: Anchor,
+                      title: 'Customs & Bond',
                     },
-                  ].map(({ icon: Icon, title, text }) => (
+                    {
+                      icon: Building2,
+                      title: 'Company Affairs',
+                    },
+                  ].map(({ icon: Icon, title }) => (
                     <div
                       key={title}
                       className="flex items-center gap-4 rounded-2xl border border-white/5 bg-slate-950/20 p-4 transition hover:bg-white/5"
@@ -209,14 +201,11 @@ export default function Home() {
                         <Icon className="h-5 w-5 text-emerald-300" />
                       </div>
 
-                      <div>
-                        <p className="font-bold">{title}</p>
-                        <p className="mt-0.5 text-xs text-slate-400">
-                          {text}
-                        </p>
+                      <div className="flex-1">
+                        <p className="font-bold text-white">{title}</p>
                       </div>
 
-                      <ChevronRight className="ml-auto h-4 w-4 text-slate-500" />
+                      <ChevronRight className="h-4 w-4 text-slate-500" />
                     </div>
                   ))}
                 </div>
@@ -240,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 02. WHY TAXLAB */}
+      {/* 02. WHY TAXLAB Section */}
       <section className="bg-white px-6 py-20 sm:px-8 sm:py-24 lg:px-12">
         <div className="mx-auto max-w-[1400px]">
           <div className="mx-auto mb-14 max-w-2xl text-center">
@@ -248,11 +237,10 @@ export default function Home() {
               Why TaxLab
             </span>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-              More Than Training. Practical Professional Development.
+              Transforming Knowledge into Professional Excellence
             </h2>
             <p className="mt-4 leading-7 text-slate-600">
-              Our approach connects Tax, VAT and compliance knowledge with the
-              practical situations professionals face every day.
+              Shaping the next generation of compliance experts. Gain practical mastery and real-world skills in Income Tax, VAT, Customs & Bond, and Company Affairs.
             </p>
           </div>
 
@@ -317,40 +305,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 04. FAQ */}
-      <section className="bg-white px-6 py-20 sm:px-8 sm:py-24 lg:px-12">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-12 text-center">
-            <span className="text-sm font-bold uppercase tracking-widest text-[#0c7844]">
-              FAQ
-            </span>
-            <h2 className="mt-3 text-3xl font-black text-slate-900 sm:text-4xl">
-              Frequently Asked Questions
-            </h2>
-            <p className="mt-4 text-slate-600">
-              Everything you need to know before joining a TaxLab program.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map(({ question, answer }) => (
-              <details
-                key={question}
-                className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-900">
-                  {question}
-                  <ChevronRight className="h-5 w-5 shrink-0 text-[#0c7844] transition-transform group-open:rotate-90" />
-                </summary>
-                <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-600">
-                  {answer}
-                </p>
-              </details>
             ))}
           </div>
         </div>

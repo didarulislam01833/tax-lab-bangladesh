@@ -88,10 +88,10 @@ export default function Footer() {
                     <div className="space-y-4">
                         <h4 className="text-white text-sm font-bold uppercase tracking-wider">Expertise</h4>
                         <ul className="space-y-2.5 text-xs">
-                            <li className="text-slate-400 hover:text-slate-200 transition">Income Tax Advisory</li>
-                            <li className="text-slate-400 hover:text-slate-200 transition">VAT & VDS Management</li>
-                            <li className="text-slate-400 hover:text-slate-200 transition">ITP Exam Preparation</li>
-                            <li className="text-slate-400 hover:text-slate-200 transition">Corporate Legal Services</li>
+                            <li className="text-slate-400 hover:text-slate-200 transition">Income Tax</li>
+                            <li className="text-slate-400 hover:text-slate-200 transition">Value Added Tax (VAT)</li>
+                            <li className="text-slate-400 hover:text-slate-200 transition">Customs & Bond</li>
+                            <li className="text-slate-400 hover:text-slate-200 transition">Company Affairs</li>
                         </ul>
                     </div>
 
@@ -102,7 +102,7 @@ export default function Footer() {
                             <li className="flex items-start gap-2.5">
                                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                                 <span className="leading-relaxed">
-                                    Dhaka, Bangladesh
+                                    House-01, Road-16, Sector -07, Uttara, Dhaka-1230
                                 </span>
                             </li>
                             <li className="flex items-center gap-2.5">
