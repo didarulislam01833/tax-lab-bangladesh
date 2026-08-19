@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
     Calendar,
     Users,
@@ -22,14 +21,15 @@ export default function UpcomingCourses() {
     const [selectedCourse, setSelectedCourse] = useState(null);
     const [showEnrollMessage, setShowEnrollMessage] = useState(false);
 
-    // Unsplash high-quality tax/finance/office placeholder images
     const courses = [
         {
             id: 1,
             category: 'exam',
             title: 'Income Tax Practitioner (ITP) Exam Prep',
-            subtitle: 'Comprehensive prep for the NBR Income Tax Practitioner license exam.',
-            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Comprehensive preparation for the NBR Income Tax Practitioner licensing examination.',
+            image:
+                'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
@@ -44,8 +44,10 @@ export default function UpcomingCourses() {
             id: 2,
             category: 'exam',
             title: 'VAT Consultant Exam Preparation',
-            subtitle: 'Targeted coaching to pass the NBR VAT Consultant licensing exam.',
-            image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Targeted professional coaching for the NBR VAT Consultant licensing examination.',
+            image:
+                'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
@@ -60,8 +62,10 @@ export default function UpcomingCourses() {
             id: 3,
             category: 'customs',
             title: 'LC & Commercial Management',
-            subtitle: 'Practical training on LC, import-export operations, & banking rules.',
-            image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Practical training on LC, import-export operations and banking procedures.',
+            image:
+                'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -76,8 +80,10 @@ export default function UpcomingCourses() {
             id: 4,
             category: 'commercial',
             title: 'e-GP Procurement Training',
-            subtitle: 'Hands-on training on govt electronic procurement portal operations.',
-            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Hands-on professional training on government electronic procurement operations.',
+            image:
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -92,8 +98,10 @@ export default function UpcomingCourses() {
             id: 5,
             category: 'finance',
             title: 'Analysis of Finance Act, 2026',
-            subtitle: 'Breakdown of new direct & indirect tax amendments under Finance Act 2026.',
-            image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Professional analysis of major direct and indirect tax amendments under Finance Act 2026.',
+            image:
+                'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -108,8 +116,10 @@ export default function UpcomingCourses() {
             id: 6,
             category: 'taxation',
             title: 'Income Tax Return Filing',
-            subtitle: 'Hands-on practical guide to personal and corporate return submission.',
-            image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Hands-on practical training for individual and corporate income tax return submission.',
+            image:
+                'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
@@ -124,8 +134,10 @@ export default function UpcomingCourses() {
             id: 7,
             category: 'vat',
             title: 'VAT Return Filing (Mushak 9.1)',
-            subtitle: 'Step-by-step training on monthly VAT return preparation.',
-            image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Step-by-step professional training on monthly VAT return preparation and filing.',
+            image:
+                'https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -140,8 +152,10 @@ export default function UpcomingCourses() {
             id: 8,
             category: 'vat',
             title: 'Input Output Co-efficient (4.3)',
-            subtitle: 'Guide to Mushak 4.3 declaration, calculation, and NBR filing.',
-            image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop',
+            subtitle:
+                'Practical guide to Mushak 4.3 declaration, calculation and NBR filing.',
+            image:
+                'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -154,256 +168,601 @@ export default function UpcomingCourses() {
         }
     ];
 
-    const filteredCourses = activeTab === 'all'
-        ? courses
-        : courses.filter(c => c.category === activeTab);
+    const filteredCourses =
+        activeTab === 'all'
+            ? courses
+            : courses.filter((course) => course.category === activeTab);
 
     const handleEnrollClick = () => {
         setShowEnrollMessage(true);
+
         setTimeout(() => {
             setShowEnrollMessage(false);
         }, 3000);
     };
 
     return (
-        <main className="min-h-screen bg-slate-50 text-slate-900 font-sans py-12">
+        <main className="min-h-screen bg-[#f6f8fb] text-slate-900">
 
-            {/* Header Section */}
-            <section className="pt-8 pb-10 px-6 sm:px-10 max-w-5xl mx-auto text-center space-y-3">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-full text-xs font-semibold shadow-sm">
-                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" /> Executive Development Programs
+            {/* =====================================================
+                HERO / PAGE HEADER
+            ===================================================== */}
+            <section className="relative overflow-hidden bg-[#0f2347] text-white">
+
+                {/* Background Decoration */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-32 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
+                    <div className="absolute -bottom-40 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                    Practical NBR & Tax Training
-                </h1>
+                <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-20">
 
-                <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                    Interactive professional programs designed for Tax Practitioners, Accountants, and Finance Executives.
-                </p>
+                    <div className="max-w-3xl mx-auto text-center">
 
-                {/* Filter Navigation */}
-                <div className="pt-6 flex flex-wrap items-center justify-center gap-2">
-                    {[
-                        { id: 'all', label: 'All Workshops' },
-                        { id: 'exam', label: 'ITP & VAT Exam' },
-                        { id: 'taxation', label: 'Income Tax & TDS' },
-                        { id: 'vat', label: 'VAT & VDS' },
-                        { id: 'customs', label: 'LC & Customs' },
-                        { id: 'commercial', label: 'e-GP Procurement' }
-                    ].map((tab) => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 ${activeTab === tab.id
-                                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20 scale-105'
-                                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shadow-sm'
-                                }`}
-                        >
-                            {tab.label}
-                        </button>
-                    ))}
+                        {/* Badge */}
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                            <Sparkles className="w-4 h-4" />
+                            Executive Development Programs
+                        </div>
+
+                        {/* Heading */}
+                        <h1 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                            Professional Tax & VAT
+                            <span className="block text-emerald-400">
+                                Training Programs
+                            </span>
+                        </h1>
+
+                        <p className="mt-5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                            Practical and professional programs designed for Tax
+                            Practitioners, Accountants, Finance Executives,
+                            Commercial Professionals and Business Owners.
+                        </p>
+
+                    </div>
+
                 </div>
             </section>
 
-            {/* 10 Minute School Style Grid with Images */}
-            <section className="pb-20 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {filteredCourses.map((course) => (
-                        <div
-                            key={course.id}
-                            className="group bg-white border border-slate-200 hover:border-emerald-500 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                        >
-                            <div>
-                                {/* Course Thumbnail Image */}
-                                <div className="relative w-full h-44 overflow-hidden bg-slate-100">
+
+            {/* =====================================================
+                FILTER AREA
+            ===================================================== */}
+            <section className="bg-white border-b border-slate-200 sticky top-0 z-30">
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10">
+
+                    <div className="py-4 flex gap-2 overflow-x-auto scrollbar-hide">
+
+                        {[
+                            { id: 'all', label: 'All Programs' },
+                            { id: 'exam', label: 'ITP & VAT Exam' },
+                            { id: 'taxation', label: 'Income Tax & TDS' },
+                            { id: 'vat', label: 'VAT & VDS' },
+                            { id: 'customs', label: 'LC & Customs' },
+                            { id: 'commercial', label: 'e-GP Procurement' }
+                        ].map((tab) => (
+
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`
+                                    shrink-0 px-4 py-2.5 rounded-lg
+                                    text-xs font-bold
+                                    transition-all duration-200
+                                    border
+                                    ${activeTab === tab.id
+                                        ? 'bg-[#0f2347] text-white border-[#0f2347] shadow-md'
+                                        : 'bg-white text-slate-600 border-slate-200 hover:border-emerald-400 hover:text-emerald-700'
+                                    }
+                                `}
+                            >
+                                {tab.label}
+                            </button>
+
+                        ))}
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            {/* =====================================================
+                COURSE GRID
+            ===================================================== */}
+            <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-10">
+
+                <div className="max-w-7xl mx-auto">
+
+                    <div className="mb-8 flex items-end justify-between">
+
+                        <div>
+                            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest">
+                                Upcoming Programs
+                            </p>
+
+                            <h2 className="mt-1 text-2xl sm:text-3xl font-black text-[#0f2347]">
+                                Choose Your Training
+                            </h2>
+                        </div>
+
+                        <div className="hidden sm:block text-xs font-medium text-slate-500">
+                            {filteredCourses.length} Programs Available
+                        </div>
+
+                    </div>
+
+
+                    {/* 4 CARDS PER ROW */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-6">
+
+                        {filteredCourses.map((course) => (
+
+                            <article
+                                key={course.id}
+                                className="
+                                    group
+                                    bg-white
+                                    rounded-2xl
+                                    border border-slate-200
+                                    overflow-hidden
+                                    flex flex-col
+                                    shadow-sm
+                                    hover:shadow-xl
+                                    hover:-translate-y-1
+                                    hover:border-emerald-300
+                                    transition-all duration-300
+                                "
+                            >
+
+                                {/* IMAGE */}
+                                <div className="relative h-40 overflow-hidden bg-slate-100">
+
                                     <img
                                         src={course.image}
                                         alt={course.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        className="
+                                            w-full h-full object-cover
+                                            group-hover:scale-105
+                                            transition-transform duration-500
+                                        "
                                     />
-                                    {/* Category & Status Overlay Badges */}
-                                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                                        <span className="px-2.5 py-1 bg-slate-900/80 backdrop-blur-md text-white rounded-lg text-[10px] font-extrabold uppercase tracking-wider">
+
+                                    {/* Image Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+
+                                    {/* Category */}
+                                    <div className="absolute top-3 left-3">
+                                        <span className="px-2.5 py-1 rounded-md bg-white/95 text-[#0f2347] text-[9px] font-black uppercase tracking-wider shadow-sm">
                                             {course.category}
                                         </span>
-                                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-600 text-white shadow-md">
-                                            <Clock className="w-3 h-3" /> {course.status}
-                                        </span>
                                     </div>
+
+                                    {/* Status */}
+                                    <div className="absolute bottom-3 left-3">
+
+                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-600 text-white text-[9px] font-bold shadow-md">
+
+                                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+
+                                            {course.status}
+
+                                        </span>
+
+                                    </div>
+
                                 </div>
 
-                                {/* Content Container */}
-                                <div className="p-5 space-y-4">
-                                    {/* Title & Subtitle */}
+
+                                {/* CONTENT */}
+                                <div className="p-4 flex flex-col flex-1">
+
+                                    {/* TITLE */}
                                     <div>
-                                        <h3 className="text-base font-extrabold text-slate-900 group-hover:text-emerald-600 transition-colors duration-200 leading-snug line-clamp-2">
+
+                                        <h3 className="
+                                            text-[15px]
+                                            font-extrabold
+                                            text-[#0f2347]
+                                            leading-snug
+                                            line-clamp-2
+                                            group-hover:text-emerald-700
+                                            transition-colors
+                                        ">
                                             {course.title}
                                         </h3>
-                                        <p className="text-slate-600 text-xs leading-relaxed mt-2 line-clamp-2">
+
+                                        <p className="
+                                            mt-2
+                                            text-[11px]
+                                            text-slate-500
+                                            leading-relaxed
+                                            line-clamp-2
+                                        ">
                                             {course.subtitle}
                                         </p>
+
                                     </div>
 
-                                    {/* Highlights */}
-                                    <div className="pt-3 space-y-2 border-t border-slate-100">
-                                        {course.features.slice(0, 2).map((feat, i) => (
-                                            <div key={i} className="flex items-center gap-2 text-xs text-slate-700 truncate">
-                                                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                                                <span className="truncate font-medium">{feat}</span>
-                                            </div>
-                                        ))}
-                                    </div>
 
-                                    {/* Mode & Date */}
-                                    <div className="pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-2">
-                                        <div className="flex items-center justify-between text-[11px]">
-                                            <span className="flex items-center gap-1.5 text-slate-600">
-                                                <Calendar className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> Starts: <strong className="text-slate-900">TBA</strong>
+                                    {/* INFO */}
+                                    <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
+
+                                        <div className="flex items-center justify-between text-[10px]">
+
+                                            <span className="flex items-center gap-1.5 text-slate-500">
+                                                <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                                                Start Date
                                             </span>
-                                            <span className="flex items-center gap-1.5 text-slate-600">
-                                                <Users className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> {course.mode}
+
+                                            <span className="font-bold text-slate-800">
+                                                TBA
                                             </span>
+
                                         </div>
 
-                                        {/* Fee */}
-                                        <div className="flex items-center justify-between pt-1">
-                                            <span className="text-[11px] text-slate-500 font-medium">Course Fee:</span>
-                                            <span className="text-sm font-extrabold text-emerald-600 flex items-center gap-1">
-                                                <Tag className="w-3.5 h-3.5" />
+
+                                        <div className="flex items-center justify-between text-[10px]">
+
+                                            <span className="flex items-center gap-1.5 text-slate-500">
+                                                <Users className="w-3.5 h-3.5 text-emerald-600" />
+                                                Mode
+                                            </span>
+
+                                            <span className="font-bold text-slate-800 text-right max-w-[100px] truncate">
+                                                {course.mode}
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    {/* BOTTOM */}
+                                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+
+                                        <div>
+                                            <p className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">
+                                                Course Fee
+                                            </p>
+
+                                            <p className="text-sm font-black text-emerald-700">
                                                 {course.price}
-                                            </span>
+                                            </p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            {/* Action Button */}
-                            <div className="p-5 pt-0">
-                                <button
-                                    onClick={() => setSelectedCourse(course)}
-                                    className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition-all duration-200 flex items-center justify-center gap-2 shadow-sm"
-                                >
-                                    <span>See Details & Curriculum</span>
-                                    <ChevronRight className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+
+                                        {/* SEE MORE */}
+                                        <button
+                                            onClick={() => setSelectedCourse(course)}
+                                            className="
+                                                inline-flex
+                                                items-center
+                                                gap-1.5
+                                                px-3.5
+                                                py-2
+                                                rounded-lg
+                                                bg-[#0f2347]
+                                                hover:bg-emerald-600
+                                                text-white
+                                                text-[10px]
+                                                font-bold
+                                                transition-all
+                                                duration-200
+                                                shadow-sm
+                                            "
+                                        >
+                                            See More
+                                            <ChevronRight className="w-3.5 h-3.5" />
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        ))}
+
+                    </div>
+
                 </div>
+
             </section>
 
-            {/* Details Modal */}
+
+            {/* =====================================================
+                DETAILS MODAL
+            ===================================================== */}
             {selectedCourse && (
+
                 <div
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
+                    className="
+                        fixed inset-0 z-50
+                        flex items-center justify-center
+                        p-4
+                        bg-slate-950/70
+                        backdrop-blur-sm
+                    "
                     onClick={() => setSelectedCourse(null)}
                 >
+
                     <div
-                        className="bg-white border border-slate-200 w-full max-w-lg rounded-3xl overflow-hidden space-y-6 relative shadow-2xl text-slate-900"
+                        className="
+                            relative
+                            w-full max-w-xl
+                            max-h-[90vh]
+                            overflow-y-auto
+                            bg-white
+                            rounded-3xl
+                            shadow-2xl
+                            border border-slate-200
+                        "
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Modal Image Header */}
-                        <div className="relative w-full h-48 bg-slate-100">
+
+                        {/* MODAL IMAGE */}
+                        <div className="relative h-48 sm:h-56">
+
                             <img
                                 src={selectedCourse.image}
                                 alt={selectedCourse.title}
                                 className="w-full h-full object-cover"
                             />
+
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
+
                             <button
                                 onClick={() => setSelectedCourse(null)}
-                                className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/70 text-white hover:bg-slate-900 transition"
+                                className="
+                                    absolute
+                                    top-4 right-4
+                                    w-9 h-9
+                                    rounded-full
+                                    bg-black/50
+                                    hover:bg-black/80
+                                    text-white
+                                    flex items-center justify-center
+                                    transition
+                                "
                             >
                                 <X className="w-4 h-4" />
                             </button>
-                        </div>
 
-                        <div className="p-6 pt-0 space-y-6">
-                            <div className="space-y-2">
-                                <div className="flex items-center gap-2">
-                                    <span className="px-2.5 py-0.5 bg-slate-100 text-slate-800 rounded-md text-[10px] font-bold uppercase tracking-wider border border-slate-200">
-                                        {selectedCourse.category}
-                                    </span>
-                                    <span className="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                                        {selectedCourse.status}
-                                    </span>
-                                </div>
-                                <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-snug">
+                            <div className="absolute bottom-5 left-5 right-5">
+
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-600 text-white text-[9px] font-bold uppercase">
+                                    {selectedCourse.category}
+                                </span>
+
+                                <h2 className="mt-2 text-xl sm:text-2xl font-black text-white leading-tight">
                                     {selectedCourse.title}
                                 </h2>
-                                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                                    {selectedCourse.subtitle}
-                                </p>
+
                             </div>
 
-                            <div className="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs">
-                                <div>
-                                    <span className="text-slate-500 block text-[11px]">Learning Mode</span>
-                                    <span className="text-slate-900 font-bold">{selectedCourse.mode}</span>
+                        </div>
+
+
+                        {/* MODAL CONTENT */}
+                        <div className="p-6 sm:p-7 space-y-6">
+
+                            <p className="text-sm text-slate-600 leading-relaxed">
+                                {selectedCourse.subtitle}
+                            </p>
+
+
+                            {/* INFO BOX */}
+                            <div className="grid grid-cols-2 gap-3">
+
+                                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+
+                                    <Calendar className="w-4 h-4 text-emerald-600 mb-2" />
+
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">
+                                        Start Date
+                                    </p>
+
+                                    <p className="text-sm font-bold text-[#0f2347] mt-1">
+                                        To Be Announced
+                                    </p>
+
                                 </div>
-                                <div className="text-right">
-                                    <span className="text-slate-500 block text-[11px]">Course Fee</span>
-                                    <span className="text-base font-extrabold text-emerald-600">{selectedCourse.price}</span>
+
+
+                                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+
+                                    <Users className="w-4 h-4 text-emerald-600 mb-2" />
+
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">
+                                        Learning Mode
+                                    </p>
+
+                                    <p className="text-sm font-bold text-[#0f2347] mt-1">
+                                        {selectedCourse.mode}
+                                    </p>
+
                                 </div>
+
                             </div>
 
-                            <div className="space-y-3">
-                                <h4 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                                    <BookOpen className="w-4 h-4 text-emerald-600" /> What You Will Learn
-                                </h4>
-                                <ul className="space-y-2.5">
-                                    {selectedCourse.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 leading-relaxed">
+
+                            {/* CURRICULUM */}
+                            <div>
+
+                                <div className="flex items-center gap-2 mb-4">
+
+                                    <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+                                        <BookOpen className="w-4 h-4 text-emerald-600" />
+                                    </div>
+
+                                    <h3 className="text-sm font-black text-[#0f2347]">
+                                        What You Will Learn
+                                    </h3>
+
+                                </div>
+
+
+                                <div className="space-y-3">
+
+                                    {selectedCourse.features.map((feature, index) => (
+
+                                        <div
+                                            key={index}
+                                            className="flex items-start gap-3"
+                                        >
+
                                             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                            <span className="font-medium">{feature}</span>
-                                        </li>
+
+                                            <span className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                                {feature}
+                                            </span>
+
+                                        </div>
+
                                     ))}
-                                </ul>
+
+                                </div>
+
                             </div>
 
-                            <div className="pt-2 relative">
-                                <button
-                                    onClick={handleEnrollClick}
-                                    className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-center text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20"
-                                >
-                                    Enroll Now <ArrowRight className="w-4 h-4" />
-                                </button>
+
+                            {/* FEE + BUTTON */}
+                            <div className="pt-5 border-t border-slate-200">
+
+                                <div className="flex items-center justify-between gap-4">
+
+                                    <div>
+
+                                        <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
+                                            Course Fee
+                                        </p>
+
+                                        <p className="text-xl font-black text-emerald-700">
+                                            {selectedCourse.price}
+                                        </p>
+
+                                    </div>
+
+
+                                    <button
+                                        onClick={handleEnrollClick}
+                                        className="
+                                            px-5 py-3
+                                            bg-[#0f2347]
+                                            hover:bg-emerald-600
+                                            text-white
+                                            rounded-xl
+                                            text-xs
+                                            font-bold
+                                            flex items-center gap-2
+                                            transition
+                                            shadow-lg
+                                        "
+                                    >
+                                        Enroll Now
+                                        <ArrowRight className="w-4 h-4" />
+                                    </button>
+
+                                </div>
+
 
                                 {showEnrollMessage && (
-                                    <div className="mt-3 text-center animate-in fade-in slide-in-from-bottom-2 duration-300">
-                                        <p className="text-emerald-700 font-bold text-sm tracking-wide">
+
+                                    <div className="mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
+
+                                        <p className="text-emerald-700 font-bold text-xs">
                                             Enrollment Coming Soon!
                                         </p>
+
+                                        <p className="text-emerald-600 text-[10px] mt-1">
+                                            Please contact our course advisor for updates.
+                                        </p>
+
                                     </div>
+
                                 )}
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             )}
 
-            {/* Certification Footer Banner */}
-            <section className="pb-12 px-6 sm:px-10 max-w-7xl mx-auto">
-                <div className="bg-white border border-slate-200 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
-                    <div className="space-y-1.5 text-center md:text-left">
-                        <div className="inline-flex items-center gap-1.5 text-emerald-700 font-bold text-xs">
-                            <ShieldCheck className="w-4 h-4" /> Verified Certification
+
+            {/* =====================================================
+                CERTIFICATION BANNER
+            ===================================================== */}
+            <section className="pb-16 px-4 sm:px-8 lg:px-10">
+
+                <div className="max-w-7xl mx-auto">
+
+                    <div className="
+                        relative
+                        overflow-hidden
+                        bg-[#0f2347]
+                        rounded-3xl
+                        p-7 sm:p-10
+                        text-white
+                        shadow-xl
+                    ">
+
+                        <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
+
+                        <div className="relative flex flex-col md:flex-row items-center justify-between gap-7">
+
+                            <div className="text-center md:text-left">
+
+                                <div className="inline-flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+
+                                    <ShieldCheck className="w-4 h-4" />
+
+                                    Verified Certification
+
+                                </div>
+
+                                <h3 className="mt-2 text-xl sm:text-2xl font-black">
+                                    Earn a Professional Certificate
+                                </h3>
+
+                                <p className="mt-2 text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+                                    Participants who successfully complete the required
+                                    assignments and assessment will receive a verified
+                                    certificate from TaxLab Bangladesh.
+                                </p>
+
+                            </div>
+
+
+                            <Link
+                                href="/contact"
+                                className="
+                                    shrink-0
+                                    px-6 py-3
+                                    bg-emerald-500
+                                    hover:bg-emerald-400
+                                    text-[#071a35]
+                                    rounded-xl
+                                    text-xs
+                                    font-black
+                                    transition
+                                    shadow-lg
+                                "
+                            >
+                                Contact Course Advisor
+                            </Link>
+
                         </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-slate-900">
-                            Earn an Industry-Recognized Certificate
-                        </h3>
-                        <p className="text-slate-600 text-xs sm:text-sm max-w-xl">
-                            Upon successful completion of practical assignments & assessment, participants receive a verified certificate from TaxLab Bangladesh.
-                        </p>
+
                     </div>
 
-                    <Link
-                        href="/contact"
-                        className="shrink-0 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-xs transition shadow-md"
-                    >
-                        Contact Course Advisor
-                    </Link>
                 </div>
+
             </section>
 
         </main>
