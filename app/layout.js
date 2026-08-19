@@ -5,6 +5,7 @@ import './globals.css';
 // Root level components import (using @ alias)
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingSocialButtons from '@/components/FloatingSocialButtons';
 
 export const metadata = {
     title: 'TaxLab Bangladesh - Premier Tax, VAT & Legal Advisory',
@@ -18,6 +19,9 @@ export default function RootLayout({ children }) {
                 <Header />
                 <main>{children}</main>
                 <Footer />
+
+                {/* Floating WhatsApp and Facebook Buttons */}
+                <FloatingSocialButtons />
             </body>
         </html>
     );

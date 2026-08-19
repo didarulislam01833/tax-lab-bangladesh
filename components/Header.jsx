@@ -478,8 +478,8 @@ export default function Header() {
 
                                     <ChevronDown
                                         className={`w-4 h-4 transition-transform ${mobileActiveDropdown === 'services'
-                                                ? 'rotate-180'
-                                                : ''
+                                            ? 'rotate-180'
+                                            : ''
                                             }`}
                                     />
                                 </button>
@@ -553,8 +553,8 @@ export default function Header() {
 
                                     <ChevronDown
                                         className={`w-4 h-4 transition-transform ${mobileActiveDropdown === 'act-rules'
-                                                ? 'rotate-180'
-                                                : ''
+                                            ? 'rotate-180'
+                                            : ''
                                             }`}
                                     />
                                 </button>
@@ -572,8 +572,8 @@ export default function Header() {
                                                 Income Tax
                                                 <ChevronDown
                                                     className={`w-3.5 h-3.5 transition-transform ${mobileSubDropdown === 'tax'
-                                                            ? 'rotate-180'
-                                                            : ''
+                                                        ? 'rotate-180'
+                                                        : ''
                                                         }`}
                                                 />
                                             </button>
@@ -617,8 +617,8 @@ export default function Header() {
                                                 VAT
                                                 <ChevronDown
                                                     className={`w-3.5 h-3.5 transition-transform ${mobileSubDropdown === 'vat'
-                                                            ? 'rotate-180'
-                                                            : ''
+                                                        ? 'rotate-180'
+                                                        : ''
                                                         }`}
                                                 />
                                             </button>
