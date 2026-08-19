@@ -15,7 +15,13 @@ import {
     Building2,
     Globe,
     Award,
-    MoreHorizontal
+    MoreHorizontal,
+    BookOpen,
+    Home,
+    Phone,
+    Images,
+    Newspaper,
+    Scale,
 } from 'lucide-react';
 
 export default function Header() {
@@ -24,299 +30,720 @@ export default function Header() {
     const [mobileSubDropdown, setMobileSubDropdown] = useState(null);
 
     const toggleMobileDropdown = (key) => {
-        setMobileActiveDropdown(mobileActiveDropdown === key ? null : key);
+        setMobileActiveDropdown(
+            mobileActiveDropdown === key ? null : key
+        );
         setMobileSubDropdown(null);
     };
 
     const toggleMobileSubDropdown = (key) => {
-        setMobileSubDropdown(mobileSubDropdown === key ? null : key);
+        setMobileSubDropdown(
+            mobileSubDropdown === key ? null : key
+        );
+    };
+
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+        setMobileActiveDropdown(null);
+        setMobileSubDropdown(null);
     };
 
     return (
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-[0_4px_20px_rgba(15,23,42,0.06)]">
 
-                    {/* Logo Section */}
-                    <Link href="/" className="flex items-center gap-3 group shrink-0">
-                        <Image
-                            src="/logo.png"
-                            alt="TaxLab Bangladesh Logo"
-                            width={46}
-                            height={46}
-                            className="object-contain group-hover:scale-105 transition-transform duration-300"
-                            priority
-                        />
-                        <div className="flex flex-col">
-                            <span className="text-xl font-extrabold tracking-tight text-slate-900 leading-none">
-                                Tax<span className="text-blue-900">Lab</span>
+            {/* Top Accent Line */}
+            <div className="h-[3px] bg-gradient-to-r from-[#11244e] via-[#0c7844] to-[#d99b22]" />
+
+            <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+
+                {/* ================= DESKTOP / MAIN HEADER ================= */}
+                <div className="flex items-center justify-between min-h-[86px] gap-6">
+
+                    {/* ================= LOGO ================= */}
+                    <Link
+                        href="/"
+                        className="flex items-center gap-3.5 shrink-0 group"
+                    >
+                        {/* Logo Box */}
+                        <div className="relative flex items-center justify-center">
+                            <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-md group-hover:bg-emerald-500/20 transition-all duration-300" />
+
+                            <Image
+                                src="/logo.png"
+                                alt="TaxLab Bangladesh Logo"
+                                width={68}
+                                height={68}
+                                priority
+                                className="relative w-[60px] h-[60px] sm:w-[68px] sm:h-[68px] object-contain group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+
+                        {/* Brand Text */}
+                        <div className="flex flex-col justify-center leading-none">
+                            <span className="text-[25px] sm:text-[28px] font-black tracking-[-0.04em] text-[#11244e]">
+                                Tax<span className="text-[#0c7844]">Lab</span>
                             </span>
-                            <span className="text-[10px] font-bold text-amber-600 tracking-wider uppercase mt-1">
-                                Bangladesh
-                            </span>
+
+                            <div className="flex items-center gap-2 mt-1.5">
+                                <span className="h-[2px] w-5 bg-[#d99b22] rounded-full" />
+                                <span className="text-[9px] sm:text-[10px] font-extrabold text-[#9a6a13] tracking-[0.18em] uppercase">
+                                    Bangladesh
+                                </span>
+                            </div>
                         </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center gap-5 xl:gap-7 font-semibold text-slate-700 text-sm">
+                    {/* ================= DESKTOP NAVIGATION ================= */}
+                    <nav className="hidden lg:flex items-center gap-1 xl:gap-2 font-semibold text-[13px] xl:text-[14px] text-slate-700">
 
-                        {/* Home */}
-                        <Link href="/" className="hover:text-blue-900 transition-colors py-2">
-                            Home
+                        {/* HOME */}
+                        <Link
+                            href="/"
+                            className="group relative flex items-center gap-1.5 px-3 py-3 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition-all duration-200"
+                        >
+                            <Home className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844] transition" />
+                            <span>Home</span>
                         </Link>
 
-                        {/* Upcoming Courses */}
-                        <Link href="/upcoming-courses" className="hover:text-blue-900 transition-colors py-2">
-                            Upcoming Courses
+                        {/* UPCOMING COURSES */}
+                        <Link
+                            href="/upcoming-courses"
+                            className="group relative flex items-center gap-1.5 px-3 py-3 rounded-xl hover:bg-emerald-50 hover:text-[#0c7844] transition-all duration-200"
+                        >
+                            <BookOpen className="w-4 h-4 text-emerald-600" />
+                            <span>Upcoming Courses</span>
                         </Link>
 
-                        {/* Consultancy Services Mega Dropdown */}
-                        <div className="relative group py-6">
-                            <button className="flex items-center gap-1 hover:text-blue-900 transition-colors py-2">
+                        {/* ================= CONSULTANCY ================= */}
+                        <div className="relative group">
+
+                            <button
+                                type="button"
+                                className="flex items-center gap-1.5 px-3 py-7 rounded-xl hover:text-[#11244e] transition-all duration-200"
+                            >
+                                <Briefcase className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844]" />
                                 <span>Consultancy Services</span>
-                                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180 duration-200" />
+                                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200" />
                             </button>
 
-                            <div className="absolute top-full -left-20 w-[420px] bg-white border border-slate-100 rounded-2xl shadow-2xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform group-hover:translate-y-0 translate-y-2 grid grid-cols-1 gap-1">
+                            {/* Dropdown */}
+                            <div className="absolute top-[82px] left-1/2 -translate-x-1/2 w-[450px] bg-white border border-slate-200 rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] p-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
 
-                                <Link href="/services/income-tax" className="p-3 hover:bg-slate-50 rounded-xl transition flex items-start gap-3 group/item">
-                                    <div className="p-2 bg-blue-50 text-blue-900 rounded-lg group-hover/item:bg-blue-900 group-hover/item:text-white transition">
+                                <div className="px-3 py-2 mb-1">
+                                    <p className="text-[10px] font-black uppercase tracking-[0.15em] text-emerald-600">
+                                        Professional Services
+                                    </p>
+                                    <p className="text-xs text-slate-400 mt-1">
+                                        Business, Tax & Regulatory Advisory
+                                    </p>
+                                </div>
+
+                                {/* Income Tax */}
+                                <Link
+                                    href="/services/income-tax"
+                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-blue-50 group/item transition"
+                                >
+                                    <div className="p-2.5 bg-blue-50 text-blue-800 rounded-xl group-hover/item:bg-blue-900 group-hover/item:text-white transition">
                                         <FileText className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900 transition">Income Tax Consultancy</div>
-                                        <div className="text-[11px] text-slate-500 font-normal leading-snug mt-0.5">Corporate & Individual Tax Planning & Return Filing</div>
+                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900">
+                                            Income Tax Consultancy
+                                        </div>
+                                        <div className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                            Corporate & Individual Tax Planning, Compliance & Return Filing
+                                        </div>
                                     </div>
                                 </Link>
 
-                                <Link href="/services/vat" className="p-3 hover:bg-slate-50 rounded-xl transition flex items-start gap-3 group/item">
-                                    <div className="p-2 bg-amber-50 text-amber-600 rounded-lg group-hover/item:bg-amber-500 group-hover/item:text-slate-950 transition">
+                                {/* VAT */}
+                                <Link
+                                    href="/services/vat"
+                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-amber-50 group/item transition"
+                                >
+                                    <div className="p-2.5 bg-amber-50 text-amber-600 rounded-xl group-hover/item:bg-amber-500 group-hover/item:text-white transition">
                                         <Briefcase className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900 transition">VAT Consultancy</div>
-                                        <div className="text-[11px] text-slate-500 font-normal leading-snug mt-0.5">VAT Compliance, Return Filing, Book Keeping & Co-Efficient Declaration</div>
+                                        <div className="font-bold text-slate-900 group-hover/item:text-amber-700">
+                                            VAT Consultancy
+                                        </div>
+                                        <div className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                            VAT Compliance, Return Filing, Book Keeping & Co-Efficient Declaration
+                                        </div>
                                     </div>
                                 </Link>
 
-                                <Link href="/services/rjsc" className="p-3 hover:bg-slate-50 rounded-xl transition flex items-start gap-3 group/item">
-                                    <div className="p-2 bg-indigo-50 text-indigo-900 rounded-lg group-hover/item:bg-indigo-900 group-hover/item:text-white transition">
+                                {/* RJSC */}
+                                <Link
+                                    href="/services/rjsc"
+                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-indigo-50 group/item transition"
+                                >
+                                    <div className="p-2.5 bg-indigo-50 text-indigo-800 rounded-xl group-hover/item:bg-indigo-900 group-hover/item:text-white transition">
                                         <Building2 className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900 transition">RJSC & Company Affairs</div>
-                                        <div className="text-[11px] text-slate-500 font-normal leading-snug mt-0.5">Registration, Return Filing, Share Transfer & Winding Up</div>
+                                        <div className="font-bold text-slate-900">
+                                            RJSC & Company Affairs
+                                        </div>
+                                        <div className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                            Registration, Return Filing, Share Transfer & Winding Up
+                                        </div>
                                     </div>
                                 </Link>
 
-                                <Link href="/services/bida" className="p-3 hover:bg-slate-50 rounded-xl transition flex items-start gap-3 group/item">
-                                    <div className="p-2 bg-emerald-50 text-emerald-800 rounded-lg group-hover/item:bg-emerald-800 group-hover/item:text-white transition">
+                                {/* BIDA */}
+                                <Link
+                                    href="/services/bida"
+                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-emerald-50 group/item transition"
+                                >
+                                    <div className="p-2.5 bg-emerald-50 text-emerald-800 rounded-xl group-hover/item:bg-emerald-800 group-hover/item:text-white transition">
                                         <Globe className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900 transition">BIDA & Related Services</div>
-                                        <div className="text-[11px] text-slate-500 font-normal leading-snug mt-0.5">Setup & Registration, Visas & Employment, Operations & Logistics, Finance & Compliance & Support & Access</div>
+                                        <div className="font-bold text-slate-900">
+                                            BIDA & Related Services
+                                        </div>
+                                        <div className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                            Setup, Registration, Visa, Employment, Operations & Compliance
+                                        </div>
                                     </div>
                                 </Link>
 
-                                <Link href="/services/licenses" className="p-3 hover:bg-slate-50 rounded-xl transition flex items-start gap-3 group/item">
-                                    <div className="p-2 bg-purple-50 text-purple-900 rounded-lg group-hover/item:bg-purple-900 group-hover/item:text-white transition">
+                                {/* Licenses */}
+                                <Link
+                                    href="/services/licenses"
+                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-purple-50 group/item transition"
+                                >
+                                    <div className="p-2.5 bg-purple-50 text-purple-800 rounded-xl group-hover/item:bg-purple-900 group-hover/item:text-white transition">
                                         <Award className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900 transition">Licenses & Certificates</div>
-                                        <div className="text-[11px] text-slate-500 font-normal leading-snug mt-0.5">IRC, ERC, trade License, Fire License, Environment License, Factory License, ISO Certificate, Credit Rating & other licenses and Certificates</div>
+                                        <div className="font-bold text-slate-900">
+                                            Licenses & Certificates
+                                        </div>
+                                        <div className="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                            IRC, ERC, Trade License, Fire, Environment, Factory, ISO & More
+                                        </div>
                                     </div>
                                 </Link>
 
-                                <Link href="/services/others" className="p-3 hover:bg-slate-50 rounded-xl transition flex items-start gap-3 group/item">
-                                    <div className="p-2 bg-slate-100 text-slate-700 rounded-lg group-hover/item:bg-slate-900 group-hover/item:text-white transition">
+                                {/* Others */}
+                                <Link
+                                    href="/services/others"
+                                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 group/item transition"
+                                >
+                                    <div className="p-2.5 bg-slate-100 text-slate-600 rounded-xl group-hover/item:bg-slate-900 group-hover/item:text-white transition">
                                         <MoreHorizontal className="w-5 h-5" />
                                     </div>
-                                    <div className="self-center">
-                                        <div className="font-bold text-slate-900 group-hover/item:text-blue-900 transition">Other Services</div>
+                                    <div className="font-bold text-slate-900">
+                                        Other Services
                                     </div>
                                 </Link>
 
                             </div>
                         </div>
 
-                        {/* Act & Rules Nested Multi-level Dropdown */}
-                        <div className="relative group py-6">
-                            <button className="flex items-center gap-1 hover:text-blue-900 transition-colors py-2">
+                        {/* ================= ACT & RULES ================= */}
+                        <div className="relative group">
+
+                            <button
+                                type="button"
+                                className="flex items-center gap-1.5 px-3 py-7 rounded-xl hover:text-[#11244e] transition"
+                            >
+                                <Scale className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844]" />
                                 <span>Act & Rules</span>
-                                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180 duration-200" />
+                                <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform" />
                             </button>
 
-                            <div className="absolute top-full left-0 w-60 bg-white border border-slate-100 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform group-hover:translate-y-0 translate-y-2">
+                            <div className="absolute top-[82px] left-0 w-64 bg-white border border-slate-200 rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
 
-                                {/* Nested Income Tax Sub-menu */}
+                                {/* Income Tax */}
                                 <div className="relative group/sub">
-                                    <div className="flex items-center justify-between px-5 py-2.5 hover:bg-slate-50 hover:text-blue-900 cursor-pointer transition">
-                                        <span>Income Tax</span>
+
+                                    <div className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 hover:text-[#11244e] cursor-pointer">
+                                        <span className="font-semibold">
+                                            Income Tax
+                                        </span>
                                         <ChevronRight className="w-4 h-4" />
                                     </div>
-                                    <div className="absolute top-0 left-full w-64 bg-white border border-slate-100 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 ml-1">
-                                        <Link href="/act-rules/income-tax/act-2023" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">Income Tax Act, 2023</Link>
-                                        <Link href="/act-rules/income-tax/tds-rules-2026" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">TDS Rules, 2026</Link>
-                                        <Link href="/act-rules/income-tax/sro" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">SROs</Link>
+
+                                    <div className="absolute top-0 left-full ml-1 w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all">
+
+                                        <Link
+                                            href="/act-rules/income-tax/act-2023"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            Income Tax Act, 2023
+                                        </Link>
+
+                                        <Link
+                                            href="/act-rules/income-tax/tds-rules-2026"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            TDS Rules, 2026
+                                        </Link>
+
+                                        <Link
+                                            href="/act-rules/income-tax/sro"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            SROs
+                                        </Link>
+
                                     </div>
                                 </div>
 
-                                {/* Nested VAT Sub-menu */}
+                                {/* VAT */}
                                 <div className="relative group/sub">
-                                    <div className="flex items-center justify-between px-5 py-2.5 hover:bg-slate-50 hover:text-blue-900 cursor-pointer transition">
-                                        <span>VAT</span>
+
+                                    <div className="flex items-center justify-between px-4 py-3 hover:bg-slate-50 hover:text-[#11244e] cursor-pointer">
+                                        <span className="font-semibold">
+                                            VAT
+                                        </span>
                                         <ChevronRight className="w-4 h-4" />
                                     </div>
-                                    <div className="absolute top-0 left-full w-72 bg-white border border-slate-100 rounded-2xl shadow-2xl py-3 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 ml-1">
-                                        <Link href="/act-rules/vat/act-2012" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">Value Added Tax & Supplementary Duty Act, 2012</Link>
-                                        <Link href="/act-rules/vat/rules-2016" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">Value Added Tax & Supplementary Duty Rules, 2016</Link>
-                                        <Link href="/act-rules/vat/forms" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">Forms</Link>
-                                        <Link href="/act-rules/vat/sro" className="block px-5 py-2 hover:bg-slate-50 hover:text-blue-900">SROs</Link>
+
+                                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all">
+
+                                        <Link
+                                            href="/act-rules/vat/act-2012"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            VAT Act, 2012
+                                        </Link>
+
+                                        <Link
+                                            href="/act-rules/vat/rules-2016"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            VAT Rules, 2016
+                                        </Link>
+
+                                        <Link
+                                            href="/act-rules/vat/forms"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            Forms
+                                        </Link>
+
+                                        <Link
+                                            href="/act-rules/vat/sro"
+                                            className="block px-4 py-2.5 text-sm hover:bg-slate-50 hover:text-blue-900"
+                                        >
+                                            SROs
+                                        </Link>
+
                                     </div>
                                 </div>
 
-                                <Link href="/act-rules/customs" className="block px-5 py-2.5 hover:bg-slate-50 hover:text-blue-900 transition">
+                                <Link
+                                    href="/act-rules/customs"
+                                    className="block px-4 py-3 font-semibold hover:bg-slate-50 hover:text-blue-900"
+                                >
                                     Customs
                                 </Link>
 
-                                <Link href="/act-rules/labor-law" className="block px-5 py-2.5 hover:bg-slate-50 hover:text-blue-900 transition">
+                                <Link
+                                    href="/act-rules/labor-law"
+                                    className="block px-4 py-3 font-semibold hover:bg-slate-50 hover:text-blue-900"
+                                >
                                     Labor Law
                                 </Link>
 
                             </div>
                         </div>
 
-                        {/* Gallery */}
-                        <Link href="/gallery" className="hover:text-blue-900 transition-colors py-2">
+                        {/* GALLERY */}
+                        <Link
+                            href="/gallery"
+                            className="group flex items-center gap-1.5 px-3 py-3 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
+                        >
+                            <Images className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844]" />
                             Gallery
                         </Link>
 
-                        {/* About Us */}
-                        <Link href="/about" className="hover:text-blue-900 transition-colors py-2">
+                        {/* ABOUT */}
+                        <Link
+                            href="/about"
+                            className="group flex items-center gap-1.5 px-3 py-3 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
+                        >
+                            <Building2 className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844]" />
                             About Us
                         </Link>
 
-                        {/* Blog */}
-                        <Link href="/blog" className="hover:text-blue-900 transition-colors py-2">
+                        {/* BLOG */}
+                        <Link
+                            href="/blog"
+                            className="group flex items-center gap-1.5 px-3 py-3 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
+                        >
+                            <Newspaper className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844]" />
                             Blog
                         </Link>
 
-                        {/* Shop (Nice Icon) */}
-                        <Link href="/shop" className="flex items-center gap-1.5 text-blue-900 hover:text-amber-600 font-bold transition-colors py-2">
+                        {/* SHOP */}
+                        <Link
+                            href="/shop"
+                            className="flex items-center gap-1.5 px-3 py-3 rounded-xl bg-slate-50 text-[#11244e] hover:bg-amber-50 hover:text-amber-700 transition font-bold"
+                        >
                             <ShoppingBag className="w-4 h-4 text-amber-500" />
-                            <span>Shop</span>
+                            Shop
                         </Link>
 
-                        {/* Contact */}
-                        <Link href="/contact" className="hover:text-blue-900 transition-colors py-2">
+                        {/* CONTACT */}
+                        <Link
+                            href="/contact"
+                            className="group flex items-center gap-1.5 px-3 py-3 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
+                        >
+                            <Phone className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844]" />
                             Contact
                         </Link>
 
                     </nav>
 
-                    {/* Right Action Button */}
-                    <div className="hidden lg:flex items-center gap-3">
+                    {/* ================= DASHBOARD ================= */}
+                    <div className="hidden lg:flex items-center shrink-0">
+
                         <Link
                             href="/dashboard"
-                            className="flex items-center gap-2 px-4 py-2 text-slate-700 hover:text-blue-900 font-semibold text-sm rounded-xl transition"
+                            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:border-[#0c7844] hover:bg-emerald-50 transition-all duration-200 shadow-sm"
                         >
-                            <User className="w-4 h-4" />
-                            <span>Dashboard</span>
+                            <div className="w-8 h-8 rounded-lg bg-[#11244e] text-white flex items-center justify-center group-hover:bg-[#0c7844] transition">
+                                <User className="w-4 h-4" />
+                            </div>
+
+                            <div className="text-left">
+                                <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
+                                    Account
+                                </p>
+                                <p className="text-xs font-bold text-slate-800">
+                                    Dashboard
+                                </p>
+                            </div>
                         </Link>
+
                     </div>
 
-                    {/* Mobile Menu Toggle */}
-                    <div className="flex lg:hidden items-center gap-2">
-                        <button
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="text-slate-700 p-2 hover:bg-slate-100 rounded-lg transition"
-                        >
-                            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    </div>
+                    {/* ================= MOBILE BUTTON ================= */}
+                    <button
+                        type="button"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="lg:hidden p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 transition shadow-sm"
+                        aria-label="Toggle navigation menu"
+                    >
+                        {mobileMenuOpen ? (
+                            <X className="w-6 h-6" />
+                        ) : (
+                            <Menu className="w-6 h-6" />
+                        )}
+                    </button>
 
                 </div>
 
-                {/* Mobile Navigation Accordion */}
+                {/* ================= MOBILE MENU ================= */}
                 {mobileMenuOpen && (
-                    <div className="lg:hidden py-4 border-t border-slate-100 space-y-2 max-h-[80vh] overflow-y-auto">
-                        <Link href="/" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 font-semibold text-slate-700">Home</Link>
-                        <Link href="/upcoming-courses" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 font-semibold text-slate-700">Upcoming Courses</Link>
+                    <div className="lg:hidden border-t border-slate-100 py-4 max-h-[calc(100vh-90px)] overflow-y-auto">
 
-                        {/* Consultancy Services Mobile Accordion */}
-                        <div>
-                            <button onClick={() => toggleMobileDropdown('services')} className="w-full flex items-center justify-between px-4 py-2 font-semibold text-slate-700">
-                                <span>Consultancy Services</span>
-                                <ChevronDown className={`w-4 h-4 transition-transform ${mobileActiveDropdown === 'services' ? 'rotate-180' : ''}`} />
-                            </button>
-                            {mobileActiveDropdown === 'services' && (
-                                <div className="pl-6 space-y-2 my-2 border-l-2 border-blue-900 ml-4">
-                                    <Link href="/services/income-tax" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">Income Tax Consultancy</Link>
-                                    <Link href="/services/vat" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">VAT Consultancy</Link>
-                                    <Link href="/services/rjsc" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">RJSC & Company Affairs</Link>
-                                    <Link href="/services/bida" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">BIDA & Related Services</Link>
-                                    <Link href="/services/licenses" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">Licenses & Certificates</Link>
-                                    <Link href="/services/others" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">Other Services</Link>
-                                </div>
-                            )}
-                        </div>
+                        <div className="space-y-1">
 
-                        {/* Act & Rules Mobile Accordion */}
-                        <div>
-                            <button onClick={() => toggleMobileDropdown('act-rules')} className="w-full flex items-center justify-between px-4 py-2 font-semibold text-slate-700">
-                                <span>Act & Rules</span>
-                                <ChevronDown className={`w-4 h-4 transition-transform ${mobileActiveDropdown === 'act-rules' ? 'rotate-180' : ''}`} />
-                            </button>
-                            {mobileActiveDropdown === 'act-rules' && (
-                                <div className="pl-6 space-y-2 my-2 border-l-2 border-amber-500 ml-4">
+                            <Link
+                                href="/"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                            >
+                                <Home className="w-5 h-5 text-[#0c7844]" />
+                                Home
+                            </Link>
 
-                                    {/* Income Tax Sub Mobile */}
-                                    <div>
-                                        <button onClick={() => toggleMobileSubDropdown('tax')} className="w-full flex items-center justify-between text-sm font-bold text-slate-800">
-                                            <span>Income Tax</span>
-                                            <ChevronDown className="w-3 h-3" />
-                                        </button>
-                                        {mobileSubDropdown === 'tax' && (
-                                            <div className="pl-4 space-y-1 mt-1 text-xs text-slate-600">
-                                                <Link href="/act-rules/income-tax/act-2023" onClick={() => setMobileMenuOpen(false)} className="block py-1">Income Tax Act, 2023</Link>
-                                                <Link href="/act-rules/income-tax/tds-rules-2026" onClick={() => setMobileMenuOpen(false)} className="block py-1">TDS Rules, 2026</Link>
-                                                <Link href="/act-rules/income-tax/sro" onClick={() => setMobileMenuOpen(false)} className="block py-1">SROs</Link>
-                                            </div>
-                                        )}
+                            <Link
+                                href="/upcoming-courses"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50"
+                            >
+                                <BookOpen className="w-5 h-5 text-emerald-600" />
+                                Upcoming Courses
+                            </Link>
+
+                            {/* MOBILE CONSULTANCY */}
+                            <div>
+                                <button
+                                    type="button"
+                                    onClick={() => toggleMobileDropdown('services')}
+                                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                                >
+                                    <span className="flex items-center gap-3">
+                                        <Briefcase className="w-5 h-5 text-blue-700" />
+                                        Consultancy Services
+                                    </span>
+
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${mobileActiveDropdown === 'services'
+                                                ? 'rotate-180'
+                                                : ''
+                                            }`}
+                                    />
+                                </button>
+
+                                {mobileActiveDropdown === 'services' && (
+                                    <div className="ml-5 pl-4 border-l-2 border-emerald-500 space-y-1 py-2">
+
+                                        <Link
+                                            href="/services/income-tax"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-semibold"
+                                        >
+                                            Income Tax Consultancy
+                                        </Link>
+
+                                        <Link
+                                            href="/services/vat"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-semibold"
+                                        >
+                                            VAT Consultancy
+                                        </Link>
+
+                                        <Link
+                                            href="/services/rjsc"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-semibold"
+                                        >
+                                            RJSC & Company Affairs
+                                        </Link>
+
+                                        <Link
+                                            href="/services/bida"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-semibold"
+                                        >
+                                            BIDA & Related Services
+                                        </Link>
+
+                                        <Link
+                                            href="/services/licenses"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-semibold"
+                                        >
+                                            Licenses & Certificates
+                                        </Link>
+
+                                        <Link
+                                            href="/services/others"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-semibold"
+                                        >
+                                            Other Services
+                                        </Link>
+
                                     </div>
+                                )}
+                            </div>
 
-                                    {/* VAT Sub Mobile */}
-                                    <div>
-                                        <button onClick={() => toggleMobileSubDropdown('vat')} className="w-full flex items-center justify-between text-sm font-bold text-slate-800">
-                                            <span>VAT</span>
-                                            <ChevronDown className="w-3 h-3" />
-                                        </button>
-                                        {mobileSubDropdown === 'vat' && (
-                                            <div className="pl-4 space-y-1 mt-1 text-xs text-slate-600">
-                                                <Link href="/act-rules/vat/act-2012" onClick={() => setMobileMenuOpen(false)} className="block py-1">VAT Act, 2012</Link>
-                                                <Link href="/act-rules/vat/rules-2016" onClick={() => setMobileMenuOpen(false)} className="block py-1">VAT Rules, 2016</Link>
-                                                <Link href="/act-rules/vat/forms" onClick={() => setMobileMenuOpen(false)} className="block py-1">Forms</Link>
-                                                <Link href="/act-rules/vat/sro" onClick={() => setMobileMenuOpen(false)} className="block py-1">SROs</Link>
-                                            </div>
-                                        )}
+                            {/* MOBILE ACT & RULES */}
+                            <div>
+                                <button
+                                    type="button"
+                                    onClick={() => toggleMobileDropdown('act-rules')}
+                                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                                >
+                                    <span className="flex items-center gap-3">
+                                        <Scale className="w-5 h-5 text-amber-600" />
+                                        Act & Rules
+                                    </span>
+
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${mobileActiveDropdown === 'act-rules'
+                                                ? 'rotate-180'
+                                                : ''
+                                            }`}
+                                    />
+                                </button>
+
+                                {mobileActiveDropdown === 'act-rules' && (
+                                    <div className="ml-5 pl-4 border-l-2 border-amber-500 space-y-2 py-2">
+
+                                        {/* Income Tax */}
+                                        <div>
+                                            <button
+                                                type="button"
+                                                onClick={() => toggleMobileSubDropdown('tax')}
+                                                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-bold"
+                                            >
+                                                Income Tax
+                                                <ChevronDown
+                                                    className={`w-3.5 h-3.5 transition-transform ${mobileSubDropdown === 'tax'
+                                                            ? 'rotate-180'
+                                                            : ''
+                                                        }`}
+                                                />
+                                            </button>
+
+                                            {mobileSubDropdown === 'tax' && (
+                                                <div className="pl-4 space-y-1 text-xs text-slate-600">
+                                                    <Link
+                                                        href="/act-rules/income-tax/act-2023"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        Income Tax Act, 2023
+                                                    </Link>
+
+                                                    <Link
+                                                        href="/act-rules/income-tax/tds-rules-2026"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        TDS Rules, 2026
+                                                    </Link>
+
+                                                    <Link
+                                                        href="/act-rules/income-tax/sro"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        SROs
+                                                    </Link>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* VAT */}
+                                        <div>
+                                            <button
+                                                type="button"
+                                                onClick={() => toggleMobileSubDropdown('vat')}
+                                                className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-bold"
+                                            >
+                                                VAT
+                                                <ChevronDown
+                                                    className={`w-3.5 h-3.5 transition-transform ${mobileSubDropdown === 'vat'
+                                                            ? 'rotate-180'
+                                                            : ''
+                                                        }`}
+                                                />
+                                            </button>
+
+                                            {mobileSubDropdown === 'vat' && (
+                                                <div className="pl-4 space-y-1 text-xs text-slate-600">
+
+                                                    <Link
+                                                        href="/act-rules/vat/act-2012"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        VAT Act, 2012
+                                                    </Link>
+
+                                                    <Link
+                                                        href="/act-rules/vat/rules-2016"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        VAT Rules, 2016
+                                                    </Link>
+
+                                                    <Link
+                                                        href="/act-rules/vat/forms"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        Forms
+                                                    </Link>
+
+                                                    <Link
+                                                        href="/act-rules/vat/sro"
+                                                        onClick={closeMobileMenu}
+                                                        className="block py-2"
+                                                    >
+                                                        SROs
+                                                    </Link>
+
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <Link
+                                            href="/act-rules/customs"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-bold"
+                                        >
+                                            Customs
+                                        </Link>
+
+                                        <Link
+                                            href="/act-rules/labor-law"
+                                            onClick={closeMobileMenu}
+                                            className="block px-3 py-2.5 text-sm font-bold"
+                                        >
+                                            Labor Law
+                                        </Link>
+
                                     </div>
+                                )}
+                            </div>
 
-                                    <Link href="/act-rules/customs" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">Customs</Link>
-                                    <Link href="/act-rules/labor-law" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-bold text-slate-800">Labor Law</Link>
-                                </div>
-                            )}
+                            {/* Remaining Mobile Links */}
+
+                            <Link
+                                href="/gallery"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                            >
+                                <Images className="w-5 h-5 text-purple-600" />
+                                Gallery
+                            </Link>
+
+                            <Link
+                                href="/about"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                            >
+                                <Building2 className="w-5 h-5 text-blue-700" />
+                                About Us
+                            </Link>
+
+                            <Link
+                                href="/blog"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                            >
+                                <Newspaper className="w-5 h-5 text-indigo-600" />
+                                Blog
+                            </Link>
+
+                            <Link
+                                href="/shop"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-[#11244e] hover:bg-amber-50"
+                            >
+                                <ShoppingBag className="w-5 h-5 text-amber-500" />
+                                Shop
+                            </Link>
+
+                            <Link
+                                href="/contact"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                            >
+                                <Phone className="w-5 h-5 text-emerald-600" />
+                                Contact
+                            </Link>
+
+                            {/* Dashboard */}
+                            <div className="pt-3 mt-2 border-t border-slate-100">
+
+                                <Link
+                                    href="/dashboard"
+                                    onClick={closeMobileMenu}
+                                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#11244e] text-white font-bold"
+                                >
+                                    <User className="w-5 h-5" />
+                                    Dashboard
+                                </Link>
+
+                            </div>
+
                         </div>
-
-                        <Link href="/gallery" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 font-semibold text-slate-700">Gallery</Link>
-                        <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 font-semibold text-slate-700">About Us</Link>
-                        <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 font-semibold text-slate-700">Blog</Link>
-                        <Link href="/shop" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 px-4 py-2 font-bold text-blue-900">
-                            <ShoppingBag className="w-4 h-4 text-amber-500" />
-                            <span>Shop</span>
-                        </Link>
-                        <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 font-semibold text-slate-700">Contact</Link>
                     </div>
                 )}
 
