@@ -1,14 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     ShieldCheck,
     Target,
     Eye,
-    Users,
-    ArrowRight,
     Sparkles,
-    BookOpenCheck
+    Award,
+    CheckCircle2,
+    Briefcase,
+    UserCheck
 } from 'lucide-react';
 
 export default function About() {
@@ -17,7 +19,6 @@ export default function About() {
 
             {/* Hero Section */}
             <section className="relative py-24 bg-gradient-to-b from-[#11244e] via-[#162d5f] to-[#11244e] text-white overflow-hidden">
-                {/* Background Glow Effects */}
                 <div className="absolute top-10 left-1/3 w-96 h-96 bg-[#0c7844]/20 rounded-full blur-[120px] pointer-events-none animate-pulse" />
 
                 <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 text-center space-y-6">
@@ -38,94 +39,98 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Mission & Vision Cards */}
-            <section className="py-20 -mt-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    {/* Mission Card */}
-                    <div className="bg-white border border-slate-200/80 p-8 sm:p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 space-y-4">
-                        <div className="w-14 h-14 bg-emerald-50 text-[#0c7844] rounded-2xl flex items-center justify-center">
-                            <Target className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-slate-900">Our Mission</h3>
-                        <p className="text-slate-600 leading-relaxed text-sm">
-                            To simplify complex tax laws for corporate institutions, businesses, and individual taxpayers across Bangladesh through accurate guidance, seamless return filing, and practical executive training.
-                        </p>
-                    </div>
 
-                    {/* Vision Card */}
-                    <div className="bg-white border border-slate-200/80 p-8 sm:p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 space-y-4">
-                        <div className="w-14 h-14 bg-blue-50 text-[#11244e] rounded-2xl flex items-center justify-center">
-                            <Eye className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-slate-900">Our Vision</h3>
-                        <p className="text-slate-600 leading-relaxed text-sm">
-                            To build a nation of informed taxpayers and skilled tax practitioners by providing real-time NBR regulatory updates, advanced corporate consultancy, and industry-focused professional development.
-                        </p>
-                    </div>
+            {/* Profile Section: Mr. Mohiuddin Bhuian */}
+            <section className="py-20 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="bg-white rounded-3xl border border-slate-200/80 shadow-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
+                    {/* Decorative Subtle Accent */}
+                    <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
-                </div>
-            </section>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-            {/* Why We Stand Out */}
-            <section className="py-16 bg-white">
-                <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 space-y-16">
+                        {/* Left Side: Photo with Styling & Hover Effects */}
+                        <div className="lg:col-span-5 flex justify-center">
+                            <div className="relative group w-full max-w-sm">
+                                {/* Glow Border Effect */}
+                                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-60 transition duration-500" />
 
-                    <div className="text-center max-w-3xl mx-auto space-y-4">
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-                            Why TaxLab Bangladesh Stands Out
-                        </h2>
-                        <p className="text-slate-600">
-                            Combining hands-on corporate tax expertise with interactive learning resources.
-                        </p>
-                    </div>
+                                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-slate-100 border border-slate-200 shadow-xl">
+                                    {/* Updated Image Path */}
+                                    <Image
+                                        src="/about-us.jpg"
+                                        alt="Mr. Mohiuddin Bhuian"
+                                        fill
+                                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                    />
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 space-y-4">
-                            <ShieldCheck className="w-10 h-10 text-[#0c7844]" />
-                            <h4 className="text-xl font-bold text-slate-900">NBR Regulation Experts</h4>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                Directly guided by Income Tax Practitioners (ITP), Chartered Accountants, and Advocates with years of litigation experience.
-                            </p>
+                                    {/* Floating Badge on Image */}
+                                    <div className="absolute bottom-4 left-4 right-4 bg-slate-900/80 backdrop-blur-md p-3.5 rounded-2xl text-white border border-white/10 text-center">
+                                        <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider">10+ Years Experience</p>
+                                        <p className="text-[11px] text-slate-300 mt-0.5">Corporate Tax & Legal Consultant</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 space-y-4">
-                            <BookOpenCheck className="w-10 h-10 text-[#11244e]" />
-                            <h4 className="text-xl font-bold text-slate-900">Practical Case Studies</h4>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                We go beyond textbook theories by offering real Mushak forms, Tax IT-11GA return filing, and VDS calculations.
-                            </p>
+                        {/* Right Side: Content Details */}
+                        <div className="lg:col-span-7 space-y-6">
+
+                            <div className="space-y-2">
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-[#0c7844] font-semibold text-xs rounded-full">
+                                    <UserCheck className="w-3.5 h-3.5" /> Founder & Lead Advisor
+                                </span>
+                                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                                    Mr. Mohiuddin Bhuian
+                                </h2>
+                                <p className="text-emerald-600 font-bold text-sm sm:text-base">
+                                    CA (CC), PGDTM, ITP, VC
+                                </p>
+                            </div>
+
+                            {/* Enlisted Badges */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div className="flex items-center gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80">
+                                    <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
+                                    <span className="text-xs font-bold text-slate-800">NBR Enlisted Income Tax Lawyer</span>
+                                </div>
+                                <div className="flex items-center gap-3 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80">
+                                    <Award className="w-5 h-5 text-emerald-600 shrink-0" />
+                                    <span className="text-xs font-bold text-slate-800">NBR Enlisted VAT Consultant</span>
+                                </div>
+                            </div>
+
+                            {/* Memberships */}
+                            <div className="space-y-3 pt-2">
+                                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Professional Memberships</h4>
+                                <ul className="space-y-2.5 text-xs font-semibold text-slate-700">
+                                    <li className="flex items-center gap-2.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                                        Dhaka Taxes Bar Association
+                                    </li>
+                                    <li className="flex items-center gap-2.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                                        Bangladesh VAT Professional Forum
+                                    </li>
+                                    <li className="flex items-center gap-2.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                                        Bangladesh Company Law Practitioner Society
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Practical Experience Highlights */}
+                            <div className="p-5 bg-gradient-to-r from-slate-900 to-[#11244e] text-white rounded-2xl space-y-2 shadow-lg">
+                                <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs">
+                                    <Briefcase className="w-4 h-4" /> Practical Expertise
+                                </div>
+                                <p className="text-xs text-slate-300 leading-relaxed">
+                                    Over <span className="text-white font-bold">10+ years of hands-on experience</span> working with country-leading Garments factories, Electric & Electrical companies, and Power Equipment manufacturers.
+                                </p>
+                            </div>
+
                         </div>
 
-                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 space-y-4">
-                            <Users className="w-10 h-10 text-teal-600" />
-                            <h4 className="text-xl font-bold text-slate-900">Client & Learner Centric</h4>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                                Dedicated support for corporate compliance audits, tax planning, and career guidance for young professionals.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            {/* Call to Action */}
-            <section className="py-20 bg-slate-900 text-white">
-                <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-                    <div className="bg-gradient-to-r from-[#11244e] to-[#0c7844] rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
-                        <div className="space-y-3 text-center md:text-left">
-                            <h3 className="text-3xl font-extrabold">Need Professional Tax or VAT Assistance?</h3>
-                            <p className="text-slate-200 text-sm">Get in touch with our team of consultants for personalized tax planning and return filing.</p>
-                        </div>
-
-                        <Link
-                            href="/contact"
-                            className="px-8 py-4 bg-white text-slate-950 hover:bg-emerald-400 font-bold rounded-2xl transition shadow-lg shrink-0 flex items-center gap-2"
-                        >
-                            Contact Us <ArrowRight className="w-5 h-5" />
-                        </Link>
                     </div>
                 </div>
             </section>
