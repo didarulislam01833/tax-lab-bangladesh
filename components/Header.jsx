@@ -105,30 +105,30 @@ export default function Header() {
                             <span>About Us</span>
                         </Link>
 
-                        {/* 3. CONSULTANCY */}
+                        {/* 3. CONSULTANCY (ALL DROPDOWN LINKS GO TO CONTACT) */}
                         <div className="relative group">
-                            <button
-                                type="button"
+                            <Link
+                                href="/contact"
                                 className="flex items-center gap-1 px-2.5 py-7 rounded-xl hover:text-[#11244e] transition-all duration-200"
                             >
                                 <Briefcase className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844] shrink-0" />
                                 <span>Consultancy</span>
                                 <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform duration-200 shrink-0" />
-                            </button>
+                            </Link>
 
                             {/* Dropdown */}
                             <div className="absolute top-[82px] left-1/2 -translate-x-1/2 w-[420px] bg-white border border-slate-200 rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] p-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 whitespace-normal">
-                                <div className="px-3 py-2 mb-1">
+                                <Link href="/contact" className="block px-3 py-2 mb-1 hover:bg-slate-50 rounded-xl transition">
                                     <p className="text-[10px] font-black uppercase tracking-[0.15em] text-emerald-600">
                                         Professional Services
                                     </p>
                                     <p className="text-xs text-slate-400 mt-1">
                                         Business, Tax & Regulatory Advisory
                                     </p>
-                                </div>
+                                </Link>
 
                                 <Link
-                                    href="/services/income-tax"
+                                    href="/contact"
                                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-blue-50 group/item transition"
                                 >
                                     <div className="p-2 bg-blue-50 text-blue-800 rounded-xl group-hover/item:bg-blue-900 group-hover/item:text-white transition shrink-0">
@@ -145,7 +145,7 @@ export default function Header() {
                                 </Link>
 
                                 <Link
-                                    href="/services/vat"
+                                    href="/contact"
                                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-amber-50 group/item transition"
                                 >
                                     <div className="p-2 bg-amber-50 text-amber-600 rounded-xl group-hover/item:bg-amber-500 group-hover/item:text-white transition shrink-0">
@@ -162,7 +162,7 @@ export default function Header() {
                                 </Link>
 
                                 <Link
-                                    href="/services/rjsc"
+                                    href="/contact"
                                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-indigo-50 group/item transition"
                                 >
                                     <div className="p-2 bg-indigo-50 text-indigo-800 rounded-xl group-hover/item:bg-indigo-900 group-hover/item:text-white transition shrink-0">
@@ -179,7 +179,7 @@ export default function Header() {
                                 </Link>
 
                                 <Link
-                                    href="/services/bida"
+                                    href="/contact"
                                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-emerald-50 group/item transition"
                                 >
                                     <div className="p-2 bg-emerald-50 text-emerald-800 rounded-xl group-hover/item:bg-emerald-800 group-hover/item:text-white transition shrink-0">
@@ -196,7 +196,7 @@ export default function Header() {
                                 </Link>
 
                                 <Link
-                                    href="/services/licenses"
+                                    href="/contact"
                                     className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-purple-50 group/item transition"
                                 >
                                     <div className="p-2 bg-purple-50 text-purple-800 rounded-xl group-hover/item:bg-purple-900 group-hover/item:text-white transition shrink-0">
@@ -213,7 +213,7 @@ export default function Header() {
                                 </Link>
 
                                 <Link
-                                    href="/services/others"
+                                    href="/contact"
                                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-100 group/item transition"
                                 >
                                     <div className="p-2 bg-slate-100 text-slate-600 rounded-xl group-hover/item:bg-slate-900 group-hover/item:text-white transition shrink-0">
@@ -235,7 +235,7 @@ export default function Header() {
                             <span>Courses</span>
                         </Link>
 
-                        {/* 5. ACT & RULES (LINKS TO CONTACT PAGE) */}
+                        {/* 5. ACT & RULES */}
                         <div className="relative group">
                             <Link
                                 href="/contact"
@@ -391,11 +391,12 @@ export default function Header() {
 
                                 {mobileActiveDropdown === 'services' && (
                                     <div className="ml-5 pl-4 border-l-2 border-emerald-500 space-y-1 py-2">
-                                        <Link href="/services/income-tax" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">Income Tax Consultancy</Link>
-                                        <Link href="/services/vat" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">VAT Consultancy</Link>
-                                        <Link href="/services/rjsc" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">RJSC & Company Affairs</Link>
-                                        <Link href="/services/bida" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">BIDA Services</Link>
-                                        <Link href="/services/licenses" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">Licenses & Certificates</Link>
+                                        <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">Income Tax Consultancy</Link>
+                                        <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">VAT Consultancy</Link>
+                                        <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">RJSC & Company Affairs</Link>
+                                        <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">BIDA Services</Link>
+                                        <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">Licenses & Certificates</Link>
+                                        <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900">Other Services</Link>
                                     </div>
                                 )}
                             </div>
