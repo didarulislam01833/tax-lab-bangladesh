@@ -87,7 +87,7 @@ export default function Header() {
                     {/* ================= DESKTOP NAVIGATION ================= */}
                     <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 font-semibold text-[13px] xl:text-[14px] text-slate-700 whitespace-nowrap">
 
-                        {/* HOME */}
+                        {/* 1. HOME */}
                         <Link
                             href="/"
                             className="group relative flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition-all duration-200"
@@ -96,16 +96,16 @@ export default function Header() {
                             <span>Home</span>
                         </Link>
 
-                        {/* COURSES (Formerly Upcoming Courses) */}
+                        {/* 2. ABOUT US */}
                         <Link
-                            href="/upcoming-courses"
-                            className="group relative flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-[#0c7844] transition-all duration-200"
+                            href="/about"
+                            className="group flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
                         >
-                            <BookOpen className="w-4 h-4 text-emerald-600 shrink-0" />
-                            <span>Courses</span>
+                            <Building2 className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844] shrink-0" />
+                            <span>About Us</span>
                         </Link>
 
-                        {/* CONSULTANCY (Formerly Consultancy Services) */}
+                        {/* 3. CONSULTANCY */}
                         <div className="relative group">
                             <button
                                 type="button"
@@ -190,7 +190,7 @@ export default function Header() {
                                             BIDA & Related Services
                                         </div>
                                         <div className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                                            Setup, Registration, Visa, Employment, Operations & Compliance
+                                            Setup & Registration, Visas & Employment, Operations & Logistics, Finance & Compliance & Support & Access
                                         </div>
                                     </div>
                                 </Link>
@@ -207,7 +207,7 @@ export default function Header() {
                                             Licenses & Certificates
                                         </div>
                                         <div className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
-                                            IRC, ERC, Trade License, Fire, Environment, Factory, ISO & More
+                                            IRC, ERC, trade License, Fire License, Environment License, Factory License, ISO Certificate, Credit Rating & other licenses and Certificates
                                         </div>
                                     </div>
                                 </Link>
@@ -226,49 +226,58 @@ export default function Header() {
                             </div>
                         </div>
 
-                        {/* ACT & RULES */}
+                        {/* 4. COURSES */}
+                        <Link
+                            href="/upcoming-courses"
+                            className="group relative flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-emerald-50 hover:text-[#0c7844] transition-all duration-200"
+                        >
+                            <BookOpen className="w-4 h-4 text-emerald-600 shrink-0" />
+                            <span>Courses</span>
+                        </Link>
+
+                        {/* 5. ACT & RULES (LINKS TO CONTACT PAGE) */}
                         <div className="relative group">
-                            <button
-                                type="button"
+                            <Link
+                                href="/contact"
                                 className="flex items-center gap-1 px-2.5 py-7 rounded-xl hover:text-[#11244e] transition"
                             >
                                 <Scale className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844] shrink-0" />
                                 <span>Act & Rules</span>
                                 <ChevronDown className="w-3.5 h-3.5 group-hover:rotate-180 transition-transform shrink-0" />
-                            </button>
+                            </Link>
 
                             <div className="absolute top-[82px] left-0 w-60 bg-white border border-slate-200 rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 whitespace-normal">
                                 <div className="relative group/sub">
-                                    <div className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-50 hover:text-[#11244e] cursor-pointer">
+                                    <Link href="/contact" className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-50 hover:text-[#11244e] cursor-pointer">
                                         <span className="font-semibold text-sm">Income Tax</span>
                                         <ChevronRight className="w-4 h-4" />
-                                    </div>
+                                    </Link>
                                     <div className="absolute top-0 left-full ml-1 w-60 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all">
-                                        <Link href="/act-rules/income-tax/act-2023" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">Income Tax Act, 2023</Link>
-                                        <Link href="/act-rules/income-tax/tds-rules-2026" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">TDS Rules, 2026</Link>
-                                        <Link href="/act-rules/income-tax/sro" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">SROs</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">Income Tax Act, 2023</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">TDS Rules, 2026</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">SROs</Link>
                                     </div>
                                 </div>
 
                                 <div className="relative group/sub">
-                                    <div className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-50 hover:text-[#11244e] cursor-pointer">
+                                    <Link href="/contact" className="flex items-center justify-between px-4 py-2.5 hover:bg-slate-50 hover:text-[#11244e] cursor-pointer">
                                         <span className="font-semibold text-sm">VAT</span>
                                         <ChevronRight className="w-4 h-4" />
-                                    </div>
+                                    </Link>
                                     <div className="absolute top-0 left-full ml-1 w-60 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all">
-                                        <Link href="/act-rules/vat/act-2012" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">VAT Act, 2012</Link>
-                                        <Link href="/act-rules/vat/rules-2016" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">VAT Rules, 2016</Link>
-                                        <Link href="/act-rules/vat/forms" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">Forms</Link>
-                                        <Link href="/act-rules/vat/sro" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">SROs</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">VAT Act, 2012</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">VAT Rules, 2016</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">Forms</Link>
+                                        <Link href="/contact" className="block px-4 py-2 text-sm hover:bg-slate-50 hover:text-blue-900">SROs</Link>
                                     </div>
                                 </div>
 
-                                <Link href="/act-rules/customs" className="block px-4 py-2.5 text-sm font-semibold hover:bg-slate-50 hover:text-blue-900">Customs</Link>
-                                <Link href="/act-rules/labor-law" className="block px-4 py-2.5 text-sm font-semibold hover:bg-slate-50 hover:text-blue-900">Labor Law</Link>
+                                <Link href="/contact" className="block px-4 py-2.5 text-sm font-semibold hover:bg-slate-50 hover:text-blue-900">Customs</Link>
+                                <Link href="/contact" className="block px-4 py-2.5 text-sm font-semibold hover:bg-slate-50 hover:text-blue-900">Labor Law</Link>
                             </div>
                         </div>
 
-                        {/* GALLERY */}
+                        {/* 6. GALLERY */}
                         <Link
                             href="/gallery"
                             className="group flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
@@ -277,16 +286,7 @@ export default function Header() {
                             <span>Gallery</span>
                         </Link>
 
-                        {/* ABOUT */}
-                        <Link
-                            href="/about"
-                            className="group flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
-                        >
-                            <Building2 className="w-4 h-4 text-slate-400 group-hover:text-[#0c7844] shrink-0" />
-                            <span>About Us</span>
-                        </Link>
-
-                        {/* BLOG */}
+                        {/* 7. BLOG */}
                         <Link
                             href="/blog"
                             className="group flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
@@ -295,7 +295,7 @@ export default function Header() {
                             <span>Blog</span>
                         </Link>
 
-                        {/* SHOP */}
+                        {/* 8. SHOP */}
                         <Link
                             href="/shop"
                             className="flex items-center gap-1 px-2.5 py-2.5 rounded-xl bg-slate-50 text-[#11244e] hover:bg-amber-50 hover:text-amber-700 transition font-bold"
@@ -304,7 +304,7 @@ export default function Header() {
                             <span>Shop</span>
                         </Link>
 
-                        {/* CONTACT */}
+                        {/* 9. CONTACT */}
                         <Link
                             href="/contact"
                             className="group flex items-center gap-1 px-2.5 py-2.5 rounded-xl hover:bg-slate-50 hover:text-[#11244e] transition"
@@ -315,7 +315,7 @@ export default function Header() {
 
                     </nav>
 
-                    {/* ================= DASHBOARD ================= */}
+                    {/* ================= ACCOUNT / DASHBOARD (RIGHT SIDE) ================= */}
                     <div className="hidden lg:flex items-center shrink-0">
                         <Link
                             href="/dashboard"
@@ -366,12 +366,12 @@ export default function Header() {
                             </Link>
 
                             <Link
-                                href="/upcoming-courses"
+                                href="/about"
                                 onClick={closeMobileMenu}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50"
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
                             >
-                                <BookOpen className="w-5 h-5 text-emerald-600" />
-                                Courses
+                                <Building2 className="w-5 h-5 text-slate-500" />
+                                About Us
                             </Link>
 
                             <div>
@@ -401,21 +401,30 @@ export default function Header() {
                             </div>
 
                             <Link
+                                href="/upcoming-courses"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50"
+                            >
+                                <BookOpen className="w-5 h-5 text-emerald-600" />
+                                Courses
+                            </Link>
+
+                            <Link
+                                href="/contact"
+                                onClick={closeMobileMenu}
+                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
+                            >
+                                <Scale className="w-5 h-5 text-slate-500" />
+                                Act & Rules
+                            </Link>
+
+                            <Link
                                 href="/gallery"
                                 onClick={closeMobileMenu}
                                 className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
                             >
                                 <Images className="w-5 h-5 text-slate-500" />
                                 Gallery
-                            </Link>
-
-                            <Link
-                                href="/about"
-                                onClick={closeMobileMenu}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50"
-                            >
-                                <Building2 className="w-5 h-5 text-slate-500" />
-                                About Us
                             </Link>
 
                             <Link
