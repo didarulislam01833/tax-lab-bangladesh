@@ -22,6 +22,7 @@ import {
     Images,
     Newspaper,
     Scale,
+    Laptop,
 } from 'lucide-react';
 
 export default function Header() {
@@ -212,6 +213,27 @@ export default function Header() {
                                     </div>
                                 </Link>
 
+
+                                {/* Sofware Service */}
+
+
+                                <Link
+                                    href="/contact"
+                                    className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-purple-50 group/item transition"
+                                >
+                                    <div className="p-2 bg-purple-50 text-purple-800 rounded-xl group-hover/item:bg-purple-900 group-hover/item:text-white transition shrink-0">
+                                        <Laptop className="w-4 h-4" /> {/* <--- Add icon here */}
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-slate-900 text-sm">
+                                            Software Services
+                                        </div>
+                                        <div className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                                            POS Software, Accounting Software, VAT Software
+                                        </div>
+                                    </div>
+                                </Link>
+
                                 <Link
                                     href="/contact"
                                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-100 group/item transition"
@@ -223,6 +245,8 @@ export default function Header() {
                                         Other Services
                                     </div>
                                 </Link>
+
+
                             </div>
                         </div>
 
