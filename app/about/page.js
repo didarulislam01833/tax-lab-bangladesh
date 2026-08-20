@@ -316,7 +316,7 @@ export default function About() {
                             </li>
                             <li className="flex items-start gap-2.5 md:col-span-2">
                                 <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1 shrink-0" />
-                                <span><strong className="text-slate-900">Input-Output Co-efficient (4.3):</strong> Hands-on preparation of Mushak 4.3 declarations and cost structure computation.</span>
+                                <span><strong className="text-slate-900">Input-Output Co-efficient (Mushak 4.3):</strong> Hands-on preparation of Mushak 4.3 declarations and cost structure computation.</span>
                             </li>
                         </ul>
                     </div>
@@ -388,7 +388,7 @@ export default function About() {
                                     <UserCheck className="w-3.5 h-3.5" /> Founder & Lead Advisor
                                 </span>
                                 <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                                    Mr. Mohiuddin Bhuian
+                                    Mr. Md Mohiuddin Bhuiyan
                                 </h2>
                                 <p className="text-emerald-600 font-bold text-sm sm:text-base">
                                     CA (CC), PGDTM, ITP, VC
@@ -429,7 +429,7 @@ export default function About() {
                                     <Briefcase className="w-4 h-4" /> Practical Expertise
                                 </div>
                                 <p className="text-xs text-slate-300 leading-relaxed">
-                                    Over <span className="text-white font-bold">10+ years of hands-on experience</span> working with country-leading Garments factories, Electric & Electrical companies, and Power Equipment manufacturers.
+                                    Over <span className="text-white font-bold">10+ years of hands-on experience</span> collaborating directly with the {"country's"} leading Power Equipment Manufacturers, Electric & Electrical Industries and Garment Industries.
                                 </p>
                             </div>
                         </div>
