@@ -22,104 +22,29 @@ export default function UpcomingCourses() {
     const [showEnrollMessage, setShowEnrollMessage] = useState(false);
 
     const courses = [
+        // ============= INCOME TAX (4 Courses) =============
         {
             id: 1,
-            category: 'exam',
-            title: 'Income Tax Practitioner (ITP) Exam Prep',
-            subtitle:
-                'Comprehensive preparation for the NBR Income Tax Practitioner licensing examination.',
-            image:
-                'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop',
+            category: 'Income Tax',
+            title: 'Income Tax Act 2023 – Comprehensive Overview',
+            subtitle: 'Complete understanding of the Income Tax Act 2023 for professionals and practitioners.',
+            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
             features: [
-                'Full NBR syllabus coverage',
-                'Previous year question analysis',
-                'Income Tax Act 2023 breakdown',
-                'Viva-voce guidance & mock tests'
+                'Full Income Tax Act 2023 breakdown',
+                'Key sections & definitions explained',
+                'Tax calculation methods',
+                'Practical case studies'
             ]
         },
         {
             id: 2,
-            category: 'exam',
-            title: 'VAT Consultant Exam Preparation',
-            subtitle:
-                'Targeted professional coaching for the NBR VAT Consultant licensing examination.',
-            image:
-                'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=900&auto=format&fit=crop',
-            mode: 'Online / Hybrid',
-            status: 'Upcoming',
-            price: 'TBA',
-            features: [
-                'VAT & SD Act 2012 deep dive',
-                'Practical Mushak applications',
-                'Model test series & solutions',
-                'NBR viva guidance'
-            ]
-        },
-        {
-            id: 3,
-            category: 'customs',
-            title: 'LC & Commercial Management',
-            subtitle:
-                'Practical training on LC, import-export operations and banking procedures.',
-            image:
-                'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=900&auto=format&fit=crop',
-            mode: 'Online (Live)',
-            status: 'Upcoming',
-            price: 'TBA',
-            features: [
-                'L/C opening & document scrutiny',
-                'Incoterms 2020 & IRC/ERC rules',
-                'Customs clearance & Bill of Entry',
-                'Bangladesh Bank forex guidelines'
-            ]
-        },
-        {
-            id: 4,
-            category: 'commercial',
-            title: 'e-GP Procurement Training',
-            subtitle:
-                'Hands-on professional training on government electronic procurement operations.',
-            image:
-                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop',
-            mode: 'Online (Live)',
-            status: 'Upcoming',
-            price: 'TBA',
-            features: [
-                'e-GP contractor registration',
-                'Tender document preparation',
-                'e-PG standard understanding',
-                'Live mock tendering process'
-            ]
-        },
-        {
-            id: 5,
-            category: 'finance',
-            title: 'Analysis of Finance Act, 2026',
-            subtitle:
-                'Professional analysis of major direct and indirect tax amendments under Finance Act 2026.',
-            image:
-                'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=900&auto=format&fit=crop',
-            mode: 'Online (Live)',
-            status: 'Upcoming',
-            price: 'TBA',
-            features: [
-                'Income Tax & VAT rate changes',
-                'Corporate compliance impact',
-                'Updated SROs & statutory laws',
-                'Guidance for 2026 assessment year'
-            ]
-        },
-        {
-            id: 6,
-            category: 'taxation',
-            title: 'Income Tax Return Filing',
-            subtitle:
-                'Hands-on practical training for individual and corporate income tax return submission.',
-            image:
-                'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
+            category: 'Income Tax',
+            title: 'Income Tax Return Filing – Practical Masterclass',
+            subtitle: 'Hands-on practical training for individual and corporate income tax return submission.',
+            image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
@@ -131,13 +56,61 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 7,
-            category: 'vat',
-            title: 'VAT Return Filing (Mushak 9.1)',
-            subtitle:
-                'Step-by-step professional training on monthly VAT return preparation and filing.',
-            image:
-                'https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=900&auto=format&fit=crop',
+            id: 3,
+            category: 'Income Tax',
+            title: 'TDS (Tax Deduction at Source) – Rules & Compliance',
+            subtitle: 'Master TDS rules, rates, deductions and compliance requirements for businesses.',
+            image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'TDS rates & deduction rules',
+                'TDS certificate issuance',
+                'Filing TDS returns',
+                'Penalty & interest provisions'
+            ]
+        },
+        {
+            id: 4,
+            category: 'Income Tax',
+            title: 'ITP (Income Tax Practitioner) Exam – Full Preparation Course',
+            subtitle: 'Comprehensive preparation for the NBR Income Tax Practitioner licensing examination.',
+            image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online / Hybrid',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'Full NBR syllabus coverage',
+                'Previous year question analysis',
+                'Income Tax Act 2023 breakdown',
+                'Viva-voce guidance & mock tests'
+            ]
+        },
+
+        // ============= VAT (6 Courses) =============
+        {
+            id: 5,
+            category: 'VAT',
+            title: 'VAT Act 2012 – A to Z',
+            subtitle: 'Complete professional understanding of the VAT & SD Act 2012 from basics to advanced.',
+            image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online / Hybrid',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'VAT & SD Act 2012 overview',
+                'Key sections & definitions',
+                'Registration & compliance rules',
+                'Practical case applications'
+            ]
+        },
+        {
+            id: 6,
+            category: 'VAT',
+            title: 'VAT Return Filing – Step-by-Step Guide',
+            subtitle: 'Step-by-step professional training on monthly VAT return preparation and filing.',
+            image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -149,13 +122,43 @@ export default function UpcomingCourses() {
             ]
         },
         {
+            id: 7,
+            category: 'VAT',
+            title: 'VAT Consultant Exam – Preparation Course',
+            subtitle: 'Targeted professional coaching for the NBR VAT Consultant licensing examination.',
+            image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online / Hybrid',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'VAT & SD Act 2012 deep dive',
+                'Practical Mushak applications',
+                'Model test series & solutions',
+                'NBR viva guidance'
+            ]
+        },
+        {
             id: 8,
-            category: 'vat',
-            title: 'Input Output Co-efficient (4.3)',
-            subtitle:
-                'Practical guide to Mushak 4.3 declaration, calculation and NBR filing.',
-            image:
-                'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop',
+            category: 'VAT',
+            title: 'VDS (VAT Deduction at Source) – Complete Guide',
+            subtitle: 'Complete practical training on VAT deduction at source rules and compliance procedures.',
+            image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'VDS rules & rates',
+                'Deduction procedures',
+                'VDS certificate management',
+                'Compliance & penalty avoidance'
+            ]
+        },
+        {
+            id: 9,
+            category: 'VAT',
+            title: 'Mushak (4.3) – Issuance & Management',
+            subtitle: 'Practical guide to Mushak 4.3 declaration, calculation and NBR filing.',
+            image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
@@ -164,6 +167,110 @@ export default function UpcomingCourses() {
                 'Mushak 4.3 form filing',
                 'Wastage percentage rules',
                 'Penalty avoidance during audits'
+            ]
+        },
+        {
+            id: 10,
+            category: 'VAT',
+            title: 'Book Keeping for VAT – Practical Training',
+            subtitle: 'Professional bookkeeping training for VAT compliance and accurate record maintenance.',
+            image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'VAT-compliant bookkeeping',
+                'Purchase & sales records',
+                'VAT reconciliation',
+                'Audit-ready documentation'
+            ]
+        },
+
+        // ============= EGP (e-Procurement) (1 Course) =============
+        {
+            id: 11,
+            category: 'EGP (e-Procurement)',
+            title: 'e-Procurement (EGP) – Complete Online Training',
+            subtitle: 'Hands-on professional training on government electronic procurement operations.',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'e-GP contractor registration',
+                'Tender document preparation',
+                'e-PG standard understanding',
+                'Live mock tendering process'
+            ]
+        },
+
+        // ============= CUSTOMS (2 Courses) =============
+        {
+            id: 12,
+            category: 'Customs',
+            title: 'Customs Valuation & HS Code Classification – Masterclass',
+            subtitle: 'Professional training on customs valuation methods and accurate HS code classification.',
+            image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'Customs valuation methods',
+                'HS Code classification rules',
+                'Bill of Entry preparation',
+                'Customs clearance procedures'
+            ]
+        },
+        {
+            id: 13,
+            category: 'Customs',
+            title: 'LC & Commercial Management – Practical Course',
+            subtitle: 'Practical training on LC, import-export operations and banking procedures.',
+            image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'L/C opening & document scrutiny',
+                'Incoterms 2020 & IRC/ERC rules',
+                'Customs clearance & Bill of Entry',
+                'Bangladesh Bank forex guidelines'
+            ]
+        },
+
+        // ============= LAND (1 Course) =============
+        {
+            id: 14,
+            category: 'Land',
+            title: 'Land Management – Mutation, Porcha & Records',
+            subtitle: 'Complete practical training on land mutation, porcha, records and management procedures.',
+            image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'Land mutation process',
+                'Porcha & record retrieval',
+                'Land tax calculation',
+                'Legal documentation'
+            ]
+        },
+
+        // ============= LABOUR LAW (1 Course) =============
+        {
+            id: 15,
+            category: 'Labour Law',
+            title: 'Labour Law – HR Compliance & Practical Application',
+            subtitle: 'Practical training on Bangladesh Labour Law, HR compliance and workplace regulations.',
+            image: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'Bangladesh Labour Act overview',
+                'HR compliance procedures',
+                'Termination & benefits rules',
+                'Maternity & workplace safety'
             ]
         }
     ];
@@ -236,11 +343,12 @@ export default function UpcomingCourses() {
 
                         {[
                             { id: 'all', label: 'All Programs' },
-                            { id: 'exam', label: 'ITP & VAT Exam' },
-                            { id: 'taxation', label: 'Income Tax & TDS' },
-                            { id: 'vat', label: 'VAT & VDS' },
-                            { id: 'customs', label: 'LC & Customs' },
-                            { id: 'commercial', label: 'e-GP Procurement' }
+                            { id: 'Income Tax', label: 'Income Tax' },
+                            { id: 'VAT', label: 'VAT' },
+                            { id: 'EGP (e-Procurement)', label: 'EGP (e-Procurement)' },
+                            { id: 'Customs', label: 'Customs' },
+                            { id: 'Land', label: 'Land' },
+                            { id: 'Labour Law', label: 'Labour Law' }
                         ].map((tab) => (
 
                             <button
