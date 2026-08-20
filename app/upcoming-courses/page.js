@@ -26,7 +26,7 @@ export default function UpcomingCourses() {
         {
             id: 1,
             category: 'Income Tax',
-            title: 'Income Tax Act 2023 – Comprehensive Overview',
+            title: 'Comprehensive Guide to the Income Tax Act 2023',
             subtitle: 'Complete understanding of the Income Tax Act 2023 for professionals and practitioners.',
             image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
@@ -92,7 +92,7 @@ export default function UpcomingCourses() {
         {
             id: 5,
             category: 'VAT',
-            title: 'VAT Act 2012 – A to Z',
+            title: 'Value Added Tax & Supplementary Duty Act, 2012 – Comprehensive Overview',
             subtitle: 'Complete professional understanding of the VAT & SD Act 2012 from basics to advanced.',
             image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
@@ -156,8 +156,8 @@ export default function UpcomingCourses() {
         {
             id: 9,
             category: 'VAT',
-            title: 'Mushak (4.3) – Issuance & Management',
-            subtitle: 'Practical guide to Mushak 4.3 declaration, calculation and NBR filing.',
+            title: 'Master class on Input-output co-efficient (Mushak 4.3)',
+            subtitle: 'Practical guide to Mushak 4.3 declaration, calculation.',
             image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
@@ -172,8 +172,8 @@ export default function UpcomingCourses() {
         {
             id: 10,
             category: 'VAT',
-            title: 'Book Keeping for VAT – Practical Training',
-            subtitle: 'Professional bookkeeping training for VAT compliance and accurate record maintenance.',
+            title: 'Practical Training on VAT Book Keeping',
+            subtitle: 'Professional book keeping training for VAT compliance and accurate record maintenance.',
             image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
             status: 'Upcoming',
@@ -272,6 +272,24 @@ export default function UpcomingCourses() {
                 'Termination & benefits rules',
                 'Maternity & workplace safety'
             ]
+        },
+
+        // ============= FINANCE ACT (1 Course) =============
+        {
+            id: 16,
+            category: 'Finance Act',
+            title: 'Finance Act – Analysis & Practical Implications',
+            subtitle: 'Professional analysis of major direct and indirect tax amendments under the Finance Act.',
+            image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online (Live)',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
+                'Income Tax & VAT rate changes',
+                'Corporate compliance impact',
+                'Updated SROs & statutory laws',
+                'Guidance for assessment year'
+            ]
         }
     ];
 
@@ -348,7 +366,8 @@ export default function UpcomingCourses() {
                             { id: 'EGP (e-Procurement)', label: 'EGP (e-Procurement)' },
                             { id: 'Customs', label: 'Customs' },
                             { id: 'Land', label: 'Land' },
-                            { id: 'Labour Law', label: 'Labour Law' }
+                            { id: 'Labour Law', label: 'Labour Law' },
+                            { id: 'Finance Act', label: 'Finance Act' }
                         ].map((tab) => (
 
                             <button
