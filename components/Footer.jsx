@@ -129,7 +129,7 @@ export default function Footer() {
 
                     {/* Copyright Notice */}
                     <div className="text-center md:text-left">
-                        <p>© {currentYear} <span className="text-slate-200 font-semibold">TaxLab Bangladesh</span>. All rights reserved.</p>
+                        <p>© {currentYear} <span className="text-slate-200 font-semibold">TaxLab Bangladesh</span> <span className='text-amber-300 font-bold'>An enterprise of Bhuiyan & Associates.</span> All rights reserved.</p>
                     </div>
 
                     {/* Developer Credit */}

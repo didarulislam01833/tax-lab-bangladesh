@@ -278,7 +278,7 @@ export default function UpcomingCourses() {
         {
             id: 16,
             category: 'Finance Act',
-            title: 'Finance Act – Analysis & Practical Implications',
+            title: 'Finance Act – 2026',
             subtitle: 'Professional analysis of major direct and indirect tax amendments under the Finance Act.',
             image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=900&auto=format&fit=crop',
             mode: 'Online (Live)',
