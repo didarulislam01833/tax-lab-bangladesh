@@ -262,6 +262,54 @@ export default function About() {
                 </div>
             </section>
 
+            {/* ===== NEW: About Us Introduction Section (Fully in English) ===== */}
+            <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+                <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+                    <div className="max-w-4xl mx-auto text-center space-y-6">
+                        {/* Decorative Badge */}
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-[#0c7844] rounded-full text-xs font-bold tracking-wider uppercase border border-emerald-200 shadow-sm">
+                            <Sparkles className="w-4 h-4 text-emerald-600" />
+                            About Us
+                        </div>
+
+                        {/* Heading */}
+                        <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                            The Story Behind <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0c7844] via-teal-600 to-[#11244e]">
+                                TaxLab Bangladesh
+                            </span>
+                        </h2>
+
+                        {/* Main Content - Your Provided Text (Fully in English) */}
+                        <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xl p-8 sm:p-12 text-left space-y-4">
+                            <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
+                                <strong className="text-slate-900">TaxLab Bangladesh</strong> is a specialized training center founded as an enterprise of{' '}
+                                <strong className="text-slate-900">Bhuiyan & Associates</strong>.
+                            </p>
+                            <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
+                                Recognizing the need for practical, high-quality tax education, Bhuiyan & Associates leveraged its years of consultancy expertise to launch TaxLab. Our goal is to train the next generation of professionals using real-world insights from our established consultancy practice.
+                            </p>
+
+                            {/* Visual divider with key highlights */}
+                            <div className="pt-4 flex flex-wrap items-center gap-3 border-t border-slate-100 mt-4">
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">
+                                    <ShieldCheck className="w-3.5 h-3.5" />
+                                    NBR Framework Compliant
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-full">
+                                    <Award className="w-3.5 h-3.5" />
+                                    Enterprise of Bhuiyan & Associates
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-50 text-purple-700 text-xs font-bold rounded-full">
+                                    <GraduationCap className="w-3.5 h-3.5" />
+                                    Practical Training Focus
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Specialized Services & Training Programs Section */}
             <section id="services" className="py-20 max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="text-center space-y-4 mb-16">
