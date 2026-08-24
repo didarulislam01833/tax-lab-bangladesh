@@ -14,7 +14,8 @@ import {
     ChevronRight,
     Clock,
     ShieldCheck,
-    Tag
+    Tag,
+    Flame
 } from 'lucide-react';
 
 export default function UpcomingCourses() {
@@ -45,7 +46,7 @@ export default function UpcomingCourses() {
         {
             id: 2,
             category: 'Income Tax',
-            title: 'Individual Income Tax Return Filling ',
+            title: 'Individual Income Tax Return Filling',
             subtitle: 'Hands-on practical training for corporate income tax return submission.',
             image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
@@ -54,7 +55,9 @@ export default function UpcomingCourses() {
             isEnrollable: true,
             features: [
                 'Individual return filing (IT-11GA)',
-
+                'Tax calculation methods',
+                'Practical case studies',
+                'Hands-on training'
             ]
         },
         {
@@ -332,10 +335,8 @@ export default function UpcomingCourses() {
 
     const handleEnrollClick = (course) => {
         if (course.isEnrollable) {
-            // Navigate to enrollment page for enrollable courses
             router.push(`/upcoming-courses/enroll?course=${encodeURIComponent(course.title)}`);
         } else {
-            // Show "Coming Soon" message for non-enrollable courses
             setShowEnrollMessage(true);
             setTimeout(() => {
                 setShowEnrollMessage(false);
@@ -346,56 +347,33 @@ export default function UpcomingCourses() {
     return (
         <main className="min-h-screen bg-[#f6f8fb] text-slate-900">
 
-            {/* =====================================================
-                HERO / PAGE HEADER
-            ===================================================== */}
+            {/* HERO */}
             <section className="relative overflow-hidden bg-[#0f2347] text-white">
-
-                {/* Background Decoration */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute -top-32 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
                     <div className="absolute -bottom-40 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
                 </div>
-
                 <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-20">
-
                     <div className="max-w-3xl mx-auto text-center">
-
-                        {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                             <Sparkles className="w-4 h-4" />
                             Executive Development Programs
                         </div>
-
-                        {/* Heading */}
                         <h1 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
                             Professional Tax & VAT
-                            <span className="block text-emerald-400">
-                                Training Programs
-                            </span>
+                            <span className="block text-emerald-400">Training Programs</span>
                         </h1>
-
                         <p className="mt-5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                            Practical and professional programs designed for Tax
-                            Practitioners, Accountants, Finance Executives,
-                            Commercial Professionals and Business Owners.
+                            Practical and professional programs designed for Tax Practitioners, Accountants, Finance Executives, Commercial Professionals and Business Owners.
                         </p>
-
                     </div>
-
                 </div>
             </section>
 
-
-            {/* =====================================================
-                FILTER AREA
-            ===================================================== */}
+            {/* FILTER */}
             <section className="bg-white border-b border-slate-200 sticky top-0 z-30">
-
                 <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10">
-
                     <div className="py-4 flex gap-2 overflow-x-auto scrollbar-hide">
-
                         {[
                             { id: 'all', label: 'All Programs' },
                             { id: 'Income Tax', label: 'Income Tax' },
@@ -406,94 +384,38 @@ export default function UpcomingCourses() {
                             { id: 'Labour Law', label: 'Labour Law' },
                             { id: 'Finance Act', label: 'Finance Act' }
                         ].map((tab) => (
-
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`
-                                    shrink-0 px-4 py-2.5 rounded-lg
-                                    text-xs font-bold
-                                    transition-all duration-200
-                                    border
-                                    ${activeTab === tab.id
-                                        ? 'bg-[#0f2347] text-white border-[#0f2347] shadow-md'
-                                        : 'bg-white text-slate-600 border-slate-200 hover:border-emerald-400 hover:text-emerald-700'
-                                    }
-                                `}
+                                className={`shrink-0 px-4 py-2.5 rounded-lg text-xs font-bold transition-all duration-200 border ${activeTab === tab.id ? 'bg-[#0f2347] text-white border-[#0f2347] shadow-md' : 'bg-white text-slate-600 border-slate-200 hover:border-emerald-400 hover:text-emerald-700'}`}
                             >
                                 {tab.label}
                             </button>
-
                         ))}
-
                     </div>
-
                 </div>
             </section>
 
-
-            {/* =====================================================
-                COURSE GRID
-            ===================================================== */}
+            {/* COURSE GRID */}
             <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-10">
-
                 <div className="max-w-7xl mx-auto">
-
                     <div className="mb-8 flex items-end justify-between">
-
                         <div>
-                            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest">
-                                Upcoming Programs
-                            </p>
-
-                            <h2 className="mt-1 text-2xl sm:text-3xl font-black text-[#0f2347]">
-                                Choose Your Training
-                            </h2>
+                            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest">Upcoming Programs</p>
+                            <h2 className="mt-1 text-2xl sm:text-3xl font-black text-[#0f2347]">Choose Your Training</h2>
                         </div>
-
-                        <div className="hidden sm:block text-xs font-medium text-slate-500">
-                            {filteredCourses.length} Programs Available
-                        </div>
-
+                        <div className="hidden sm:block text-xs font-medium text-slate-500">{filteredCourses.length} Programs Available</div>
                     </div>
 
-
-                    {/* 4 CARDS PER ROW */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-6">
-
                         {filteredCourses.map((course) => (
-
                             <article
                                 key={course.id}
-                                className="
-                                    group
-                                    bg-white
-                                    rounded-2xl
-                                    border border-slate-200
-                                    overflow-hidden
-                                    flex flex-col
-                                    shadow-sm
-                                    hover:shadow-xl
-                                    hover:-translate-y-1
-                                    hover:border-emerald-300
-                                    transition-all duration-300
-                                "
+                                className={`group bg-white rounded-2xl border overflow-hidden flex flex-col shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${course.isEnrollable ? 'border-emerald-400 ring-2 ring-emerald-200' : 'border-slate-200 hover:border-emerald-300'}`}
                             >
-
                                 {/* IMAGE */}
                                 <div className="relative h-40 overflow-hidden bg-slate-100">
-
-                                    <img
-                                        src={course.image}
-                                        alt={course.title}
-                                        className="
-                                            w-full h-full object-cover
-                                            group-hover:scale-105
-                                            transition-transform duration-500
-                                        "
-                                    />
-
-                                    {/* Image Overlay */}
+                                    <img src={course.image} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
 
                                     {/* Category */}
@@ -503,430 +425,171 @@ export default function UpcomingCourses() {
                                         </span>
                                     </div>
 
-                                    {/* Status */}
-                                    <div className="absolute bottom-3 left-3">
-
+                                    {/* Status + Enroll Badge */}
+                                    <div className="absolute bottom-3 left-3 flex gap-2 flex-wrap">
                                         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-600 text-white text-[9px] font-bold shadow-md">
-
                                             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-
                                             {course.status}
-
                                         </span>
 
+                                        {course.isEnrollable && (
+                                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-500 text-white text-[9px] font-black shadow-md">
+                                                <Flame className="w-3 h-3" />
+                                                Enroll Now
+                                            </span>
+                                        )}
                                     </div>
-
                                 </div>
-
 
                                 {/* CONTENT */}
                                 <div className="p-4 flex flex-col flex-1">
-
-                                    {/* TITLE */}
                                     <div>
-
-                                        <h3 className="
-                                            text-[15px]
-                                            font-extrabold
-                                            text-[#0f2347]
-                                            leading-snug
-                                            line-clamp-2
-                                            group-hover:text-emerald-700
-                                            transition-colors
-                                        ">
+                                        <h3 className="text-[15px] font-extrabold text-[#0f2347] leading-snug line-clamp-2 group-hover:text-emerald-700 transition-colors">
                                             {course.title}
+                                            {course.isEnrollable && (
+                                                <span className="ml-2 inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black rounded-md align-middle">
+                                                    OPEN
+                                                </span>
+                                            )}
                                         </h3>
-
-                                        <p className="
-                                            mt-2
-                                            text-[11px]
-                                            text-slate-500
-                                            leading-relaxed
-                                            line-clamp-2
-                                        ">
-                                            {course.subtitle}
-                                        </p>
-
+                                        <p className="mt-2 text-[11px] text-slate-500 leading-relaxed line-clamp-2">{course.subtitle}</p>
                                     </div>
-
 
                                     {/* INFO */}
                                     <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
-
                                         <div className="flex items-center justify-between text-[10px]">
-
                                             <span className="flex items-center gap-1.5 text-slate-500">
-                                                <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-                                                Start Date
+                                                <Calendar className="w-3.5 h-3.5 text-emerald-600" /> Start Date
                                             </span>
-
-                                            <span className="font-bold text-slate-800">
-                                                TBA
-                                            </span>
-
+                                            <span className="font-bold text-slate-800">TBA</span>
                                         </div>
-
-
                                         <div className="flex items-center justify-between text-[10px]">
-
                                             <span className="flex items-center gap-1.5 text-slate-500">
-                                                <Users className="w-3.5 h-3.5 text-emerald-600" />
-                                                Mode
+                                                <Users className="w-3.5 h-3.5 text-emerald-600" /> Mode
                                             </span>
-
-                                            <span className="font-bold text-slate-800 text-right max-w-[100px] truncate">
-                                                {course.mode}
-                                            </span>
-
+                                            <span className="font-bold text-slate-800 text-right max-w-[100px] truncate">{course.mode}</span>
                                         </div>
-
                                     </div>
-
 
                                     {/* BOTTOM */}
                                     <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-
                                         <div>
-                                            <p className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">
-                                                Course Fee
-                                            </p>
-
-                                            <p className="text-sm font-black text-emerald-700">
-                                                {course.price}
-                                            </p>
+                                            <p className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Course Fee</p>
+                                            <p className="text-sm font-black text-emerald-700">{course.price}</p>
                                         </div>
-
-
-                                        {/* SEE MORE */}
                                         <button
                                             onClick={() => setSelectedCourse(course)}
-                                            className="
-                                                inline-flex
-                                                items-center
-                                                gap-1.5
-                                                px-3.5
-                                                py-2
-                                                rounded-lg
-                                                bg-[#0f2347]
-                                                hover:bg-emerald-600
-                                                text-white
-                                                text-[10px]
-                                                font-bold
-                                                transition-all
-                                                duration-200
-                                                shadow-sm
-                                            "
+                                            className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-white text-[10px] font-bold transition-all duration-200 shadow-sm ${course.isEnrollable ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-[#0f2347] hover:bg-emerald-600'}`}
                                         >
-                                            See More
+                                            {course.isEnrollable ? 'Enroll Now' : 'See More'}
                                             <ChevronRight className="w-3.5 h-3.5" />
                                         </button>
-
                                     </div>
-
                                 </div>
-
                             </article>
-
                         ))}
-
                     </div>
-
                 </div>
-
             </section>
 
-
-            {/* =====================================================
-                DETAILS MODAL
-            ===================================================== */}
+            {/* MODAL */}
             {selectedCourse && (
-
-                <div
-                    className="
-                        fixed inset-0 z-50
-                        flex items-center justify-center
-                        p-4
-                        bg-slate-950/70
-                        backdrop-blur-sm
-                    "
-                    onClick={() => setSelectedCourse(null)}
-                >
-
-                    <div
-                        className="
-                            relative
-                            w-full max-w-xl
-                            max-h-[90vh]
-                            overflow-y-auto
-                            bg-white
-                            rounded-3xl
-                            shadow-2xl
-                            border border-slate-200
-                        "
-                        onClick={(e) => e.stopPropagation()}
-                    >
-
-                        {/* MODAL IMAGE */}
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm" onClick={() => setSelectedCourse(null)}>
+                    <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl border border-slate-200" onClick={(e) => e.stopPropagation()}>
                         <div className="relative h-48 sm:h-56">
-
-                            <img
-                                src={selectedCourse.image}
-                                alt={selectedCourse.title}
-                                className="w-full h-full object-cover"
-                            />
-
+                            <img src={selectedCourse.image} alt={selectedCourse.title} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
-
-                            <button
-                                onClick={() => setSelectedCourse(null)}
-                                className="
-                                    absolute
-                                    top-4 right-4
-                                    w-9 h-9
-                                    rounded-full
-                                    bg-black/50
-                                    hover:bg-black/80
-                                    text-white
-                                    flex items-center justify-center
-                                    transition
-                                "
-                            >
+                            <button onClick={() => setSelectedCourse(null)} className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition">
                                 <X className="w-4 h-4" />
                             </button>
-
                             <div className="absolute bottom-5 left-5 right-5">
-
-                                <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-600 text-white text-[9px] font-bold uppercase">
-                                    {selectedCourse.category}
-                                </span>
-
-                                <h2 className="mt-2 text-xl sm:text-2xl font-black text-white leading-tight">
-                                    {selectedCourse.title}
-                                </h2>
-
+                                <span className="inline-block px-2.5 py-1 rounded-md bg-emerald-600 text-white text-[9px] font-bold uppercase">{selectedCourse.category}</span>
+                                <h2 className="mt-2 text-xl sm:text-2xl font-black text-white leading-tight">{selectedCourse.title}</h2>
                             </div>
-
                         </div>
 
-
-                        {/* MODAL CONTENT */}
                         <div className="p-6 sm:p-7 space-y-6">
+                            <p className="text-sm text-slate-600 leading-relaxed">{selectedCourse.subtitle}</p>
 
-                            <p className="text-sm text-slate-600 leading-relaxed">
-                                {selectedCourse.subtitle}
-                            </p>
-
-
-                            {/* INFO BOX */}
                             <div className="grid grid-cols-2 gap-3">
-
                                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-
                                     <Calendar className="w-4 h-4 text-emerald-600 mb-2" />
-
-                                    <p className="text-[10px] text-slate-400 uppercase font-bold">
-                                        Start Date
-                                    </p>
-
-                                    <p className="text-sm font-bold text-[#0f2347] mt-1">
-                                        To Be Announced
-                                    </p>
-
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Start Date</p>
+                                    <p className="text-sm font-bold text-[#0f2347] mt-1">To Be Announced</p>
                                 </div>
-
-
                                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-
                                     <Users className="w-4 h-4 text-emerald-600 mb-2" />
-
-                                    <p className="text-[10px] text-slate-400 uppercase font-bold">
-                                        Learning Mode
-                                    </p>
-
-                                    <p className="text-sm font-bold text-[#0f2347] mt-1">
-                                        {selectedCourse.mode}
-                                    </p>
-
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Learning Mode</p>
+                                    <p className="text-sm font-bold text-[#0f2347] mt-1">{selectedCourse.mode}</p>
                                 </div>
-
                             </div>
 
-
-                            {/* CURRICULUM */}
                             <div>
-
                                 <div className="flex items-center gap-2 mb-4">
-
                                     <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
                                         <BookOpen className="w-4 h-4 text-emerald-600" />
                                     </div>
-
-                                    <h3 className="text-sm font-black text-[#0f2347]">
-                                        What You Will Learn
-                                    </h3>
-
+                                    <h3 className="text-sm font-black text-[#0f2347]">What You Will Learn</h3>
                                 </div>
-
-
                                 <div className="space-y-3">
-
                                     {selectedCourse.features.map((feature, index) => (
-
-                                        <div
-                                            key={index}
-                                            className="flex items-start gap-3"
-                                        >
-
+                                        <div key={index} className="flex items-start gap-3">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-
-                                            <span className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                                                {feature}
-                                            </span>
-
+                                            <span className="text-xs sm:text-sm text-slate-600 leading-relaxed">{feature}</span>
                                         </div>
-
                                     ))}
-
                                 </div>
-
                             </div>
 
-
-                            {/* FEE + BUTTON */}
                             <div className="pt-5 border-t border-slate-200">
-
                                 <div className="flex items-center justify-between gap-4">
-
                                     <div>
-
-                                        <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
-                                            Course Fee
-                                        </p>
-
-                                        <p className="text-xl font-black text-emerald-700">
-                                            {selectedCourse.price}
-                                        </p>
-
+                                        <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Course Fee</p>
+                                        <p className="text-xl font-black text-emerald-700">{selectedCourse.price}</p>
                                     </div>
-
-
                                     <button
                                         onClick={() => handleEnrollClick(selectedCourse)}
-                                        className="
-                                            px-5 py-3
-                                            bg-[#0f2347]
-                                            hover:bg-emerald-600
-                                            text-white
-                                            rounded-xl
-                                            text-xs
-                                            font-bold
-                                            flex items-center gap-2
-                                            transition
-                                            shadow-lg
-                                        "
+                                        className={`px-5 py-3 rounded-xl text-xs font-bold flex items-center gap-2 transition shadow-lg ${selectedCourse.isEnrollable ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-[#0f2347] hover:bg-emerald-600 text-white'}`}
                                     >
                                         Enroll Now
                                         <ArrowRight className="w-4 h-4" />
                                     </button>
-
                                 </div>
-
 
                                 {showEnrollMessage && (
-
                                     <div className="mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-center">
-
-                                        <p className="text-emerald-700 font-bold text-xs">
-                                            Enrollment Coming Soon!
-                                        </p>
-
-                                        <p className="text-emerald-600 text-[10px] mt-1">
-                                            Please contact our course advisor for updates.
-                                        </p>
-
+                                        <p className="text-emerald-700 font-bold text-xs">Enrollment Coming Soon!</p>
+                                        <p className="text-emerald-600 text-[10px] mt-1">Please contact our course advisor for updates.</p>
                                     </div>
-
                                 )}
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             )}
 
-
-            {/* =====================================================
-                CERTIFICATION BANNER
-            ===================================================== */}
+            {/* CERTIFICATION BANNER */}
             <section className="pb-16 px-4 sm:px-8 lg:px-10">
-
                 <div className="max-w-7xl mx-auto">
-
-                    <div className="
-                        relative
-                        overflow-hidden
-                        bg-[#0f2347]
-                        rounded-3xl
-                        p-7 sm:p-10
-                        text-white
-                        shadow-xl
-                    ">
-
+                    <div className="relative overflow-hidden bg-[#0f2347] rounded-3xl p-7 sm:p-10 text-white shadow-xl">
                         <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
-
                         <div className="relative flex flex-col md:flex-row items-center justify-between gap-7">
-
                             <div className="text-center md:text-left">
-
                                 <div className="inline-flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-
                                     <ShieldCheck className="w-4 h-4" />
-
                                     Verified Certification
-
                                 </div>
-
-                                <h3 className="mt-2 text-xl sm:text-2xl font-black">
-                                    Earn a Professional Certificate
-                                </h3>
-
+                                <h3 className="mt-2 text-xl sm:text-2xl font-black">Earn a Professional Certificate</h3>
                                 <p className="mt-2 text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
-                                    Participants who successfully complete the required
-                                    assignments and assessment will receive a verified
-                                    certificate from TaxLab Bangladesh.
+                                    Participants who successfully complete the required assignments and assessment will receive a verified certificate from TaxLab Bangladesh.
                                 </p>
-
                             </div>
-
-
-                            <Link
-                                href="/contact"
-                                className="
-                                    shrink-0
-                                    px-6 py-3
-                                    bg-emerald-500
-                                    hover:bg-emerald-400
-                                    text-[#071a35]
-                                    rounded-xl
-                                    text-xs
-                                    font-black
-                                    transition
-                                    shadow-lg
-                                "
-                            >
+                            <Link href="/contact" className="shrink-0 px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-[#071a35] rounded-xl text-xs font-black transition shadow-lg">
                                 Contact Course Advisor
                             </Link>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </section>
 
         </main>
