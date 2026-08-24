@@ -13,7 +13,9 @@ import {
     BookOpen,
     CheckCircle2,
     Loader2,
-    AlertCircle
+    AlertCircle,
+    Building2,
+    Wallet
 } from 'lucide-react';
 
 function EnrollForm() {
@@ -24,7 +26,9 @@ function EnrollForm() {
         fullName: '',
         email: '',
         phone: '',
+        companyName: '',
         courseName: courseName,
+        bkashAccountNumber: '',
         bkashTrxID: '',
         message: ''
     });
@@ -72,6 +76,16 @@ function EnrollForm() {
             newErrors.phone = 'Please enter a valid Bangladeshi phone number (01XXXXXXXXX)';
         }
 
+        if (!formData.companyName.trim()) {
+            newErrors.companyName = 'Company name is required';
+        }
+
+        if (!formData.bkashAccountNumber.trim()) {
+            newErrors.bkashAccountNumber = 'Bkash account number is required';
+        } else if (!/^01[0-9]{9}$/.test(formData.bkashAccountNumber.replace(/[-\s]/g, ''))) {
+            newErrors.bkashAccountNumber = 'Please enter a valid Bkash account number (01XXXXXXXXX)';
+        }
+
         if (!formData.bkashTrxID.trim()) {
             newErrors.bkashTrxID = 'Bkash Transaction ID is required';
         } else if (formData.bkashTrxID.trim().length < 8) {
@@ -97,22 +111,45 @@ function EnrollForm() {
         setSubmitSuccess(false);
 
         try {
-            // For now, just simulate success (API integration later)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            // Send data to FormSubmit.co
+            const formSubmitData = new FormData();
+            formSubmitData.append('_subject', `New Course Enrollment: ${formData.courseName}`);
+            formSubmitData.append('_replyto', formData.email);
+            formSubmitData.append('_template', 'table');
+            formSubmitData.append('Full Name', formData.fullName);
+            formSubmitData.append('Email', formData.email);
+            formSubmitData.append('Phone', formData.phone);
+            formSubmitData.append('Company Name', formData.companyName);
+            formSubmitData.append('Course Name', formData.courseName);
+            formSubmitData.append('Bkash Account Number', formData.bkashAccountNumber);
+            formSubmitData.append('Bkash Transaction ID', formData.bkashTrxID);
+            formSubmitData.append('Message', formData.message || 'N/A');
 
-            console.log('Form Data:', formData);
-
-            setSubmitSuccess(true);
-            setFormData({
-                fullName: '',
-                email: '',
-                phone: '',
-                courseName: courseName,
-                bkashTrxID: '',
-                message: ''
+            const response = await fetch('https://formsubmit.co/ajax/taxlabbangladesh@gmail.com', {
+                method: 'POST',
+                body: formSubmitData,
             });
+
+            const result = await response.json();
+
+            if (result.success === 'true' || result.success === true) {
+                setSubmitSuccess(true);
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    phone: '',
+                    companyName: '',
+                    courseName: courseName,
+                    bkashAccountNumber: '',
+                    bkashTrxID: '',
+                    message: ''
+                });
+            } else {
+                setSubmitError('Failed to submit. Please try again.');
+            }
         } catch (error) {
-            setSubmitError('Something went wrong. Please try again.');
+            console.error('Submit Error:', error);
+            setSubmitError('Network error. Please check your internet connection and try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -345,6 +382,74 @@ function EnrollForm() {
                                     <p className="mt-2 text-xs text-red-600 flex items-center gap-1">
                                         <AlertCircle className="w-3 h-3" />
                                         {errors.phone}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Company Name */}
+                            <div>
+                                <label className="block text-sm font-bold text-slate-700 mb-2">
+                                    Company Name <span className="text-red-500">*</span>
+                                </label>
+                                <div className="relative">
+                                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                                    <input
+                                        type="text"
+                                        name="companyName"
+                                        value={formData.companyName}
+                                        onChange={handleChange}
+                                        placeholder="Enter company or organization name"
+                                        className={`
+                                            w-full pl-10 pr-4 py-3
+                                            border rounded-xl
+                                            text-sm
+                                            transition-all
+                                            focus:outline-none focus:ring-2
+                                            ${errors.companyName
+                                                ? 'border-red-300 focus:ring-red-200 bg-red-50'
+                                                : 'border-slate-300 focus:ring-emerald-200 focus:border-emerald-400'
+                                            }
+                                        `}
+                                    />
+                                </div>
+                                {errors.companyName && (
+                                    <p className="mt-2 text-xs text-red-600 flex items-center gap-1">
+                                        <AlertCircle className="w-3 h-3" />
+                                        {errors.companyName}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Bkash Account Number */}
+                            <div>
+                                <label className="block text-sm font-bold text-slate-700 mb-2">
+                                    Bkash Account Number <span className="text-red-500">*</span>
+                                </label>
+                                <div className="relative">
+                                    <Wallet className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                                    <input
+                                        type="tel"
+                                        name="bkashAccountNumber"
+                                        value={formData.bkashAccountNumber}
+                                        onChange={handleChange}
+                                        placeholder="01XXXXXXXXX"
+                                        className={`
+                                            w-full pl-10 pr-4 py-3
+                                            border rounded-xl
+                                            text-sm
+                                            transition-all
+                                            focus:outline-none focus:ring-2
+                                            ${errors.bkashAccountNumber
+                                                ? 'border-red-300 focus:ring-red-200 bg-red-50'
+                                                : 'border-slate-300 focus:ring-emerald-200 focus:border-emerald-400'
+                                            }
+                                        `}
+                                    />
+                                </div>
+                                {errors.bkashAccountNumber && (
+                                    <p className="mt-2 text-xs text-red-600 flex items-center gap-1">
+                                        <AlertCircle className="w-3 h-3" />
+                                        {errors.bkashAccountNumber}
                                     </p>
                                 )}
                             </div>

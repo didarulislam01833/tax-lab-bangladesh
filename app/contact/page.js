@@ -9,16 +9,77 @@ import {
     Send,
     MessageSquare,
     Sparkles,
-    CheckCircle2
+    CheckCircle2,
+    Loader2,
+    AlertCircle
 } from 'lucide-react';
 
 export default function Contact() {
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+    const [formData, setFormData] = useState({
+        fullName: '',
+        phone: '',
+        email: '',
+        category: 'Consultancy Service',
+        message: ''
+    });
 
-    const handleSubmit = (e) => {
+    // Handle input change
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    // Handle form submit
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 5000);
+
+        setIsSubmitting(true);
+        setSubmitError('');
+
+        try {
+            // Send data to FormSubmit.co
+            const formSubmitData = new FormData();
+            formSubmitData.append('_subject', `New Contact Inquiry: ${formData.category}`);
+            formSubmitData.append('_replyto', formData.email || 'taxlabbangladesh@gmail.com');
+            formSubmitData.append('_template', 'table');
+            formSubmitData.append('Full Name', formData.fullName);
+            formSubmitData.append('Phone', formData.phone);
+            formSubmitData.append('Email', formData.email || 'N/A');
+            formSubmitData.append('Category', formData.category);
+            formSubmitData.append('Message', formData.message);
+
+            const response = await fetch('https://formsubmit.co/ajax/taxlabbangladesh@gmail.com', {
+                method: 'POST',
+                body: formSubmitData,
+            });
+
+            const result = await response.json();
+
+            if (result.success === 'true' || result.success === true) {
+                setSubmitted(true);
+                setFormData({
+                    fullName: '',
+                    phone: '',
+                    email: '',
+                    category: 'Consultancy Service',
+                    message: ''
+                });
+                setTimeout(() => setSubmitted(false), 10000);
+            } else {
+                setSubmitError('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Submit Error:', error);
+            setSubmitError('Network error. Please check your internet connection and try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -33,7 +94,7 @@ export default function Contact() {
                         <Sparkles className="w-4 h-4 text-emerald-400" /> Get in Touch
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-black tracking-tight">
-                        Let’s Discuss Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Tax & VAT Needs</span>
+                        Let&apos;s Discuss Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Tax & VAT Needs</span>
                     </h1>
                     <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
                         Have questions regarding Tax Return Filing, VAT Compliance, or Training Programs? Reach out to our advisory team.
@@ -126,11 +187,21 @@ export default function Contact() {
                                     <p className="text-slate-600 text-sm">Fill out the form below and we will respond promptly.</p>
                                 </div>
 
+                                {submitError && (
+                                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-center gap-3">
+                                        <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+                                        <p className="text-sm text-red-700">{submitError}</p>
+                                    </div>
+                                )}
+
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Full Name *</label>
                                         <input
                                             type="text"
+                                            name="fullName"
+                                            value={formData.fullName}
+                                            onChange={handleChange}
                                             required
                                             placeholder="e.g. Tanvir Ahmed"
                                             className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm"
@@ -141,6 +212,9 @@ export default function Contact() {
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Phone Number *</label>
                                         <input
                                             type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
                                             required
                                             placeholder="+880 1711-000000"
                                             className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm"
@@ -153,6 +227,9 @@ export default function Contact() {
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Email Address</label>
                                         <input
                                             type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             placeholder="name@example.com"
                                             className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm"
                                         />
@@ -160,9 +237,18 @@ export default function Contact() {
 
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Inquiry Category</label>
-                                        <select className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm text-slate-700 bg-white">
-                                            <option>Consultancy Service</option>
-                                            <option>Traning</option>
+                                        <select
+                                            name="category"
+                                            value={formData.category}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm text-slate-700 bg-white"
+                                        >
+                                            <option value="Consultancy Service">Consultancy Service</option>
+                                            <option value="Training">Training</option>
+                                            <option value="Income Tax">Income Tax</option>
+                                            <option value="VAT">VAT</option>
+                                            <option value="Customs">Customs</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                     </div>
                                 </div>
@@ -171,6 +257,9 @@ export default function Contact() {
                                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Message / Details *</label>
                                     <textarea
                                         rows={5}
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
                                         required
                                         placeholder="Briefly describe your requirements or inquiry..."
                                         className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-[#0c7844] focus:ring-2 focus:ring-[#0c7844]/20 transition text-sm resize-none"
@@ -179,9 +268,19 @@ export default function Contact() {
 
                                 <button
                                     type="submit"
-                                    className="w-full py-4 bg-[#11244e] hover:bg-[#0c7844] text-white font-bold rounded-xl transition duration-300 shadow-lg flex items-center justify-center gap-2"
+                                    disabled={isSubmitting}
+                                    className="w-full py-4 bg-[#11244e] hover:bg-[#0c7844] disabled:bg-slate-400 disabled:cursor-not-allowed text-white font-bold rounded-xl transition duration-300 shadow-lg flex items-center justify-center gap-2"
                                 >
-                                    <Send className="w-4 h-4" /> Submit Inquiry
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="w-4 h-4 animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Send className="w-4 h-4" /> Submit Inquiry
+                                        </>
+                                    )}
                                 </button>
                             </form>
                         )}
