@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import {
     Calendar,
     Users,
@@ -17,6 +18,7 @@ import {
 } from 'lucide-react';
 
 export default function UpcomingCourses() {
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState('all');
     const [selectedCourse, setSelectedCourse] = useState(null);
     const [showEnrollMessage, setShowEnrollMessage] = useState(false);
@@ -32,6 +34,7 @@ export default function UpcomingCourses() {
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Full Income Tax Act 2023 breakdown',
                 'Key sections & definitions explained',
@@ -48,6 +51,7 @@ export default function UpcomingCourses() {
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: true,
             features: [
                 'Individual return filing (IT-11GA)',
 
@@ -62,6 +66,7 @@ export default function UpcomingCourses() {
             mode: 'Online',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Corporate tax return preparation',
                 'Tax rebate & wealth reconciliation',
@@ -77,6 +82,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'TDS rates & deduction rules',
                 'TDS certificate issuance',
@@ -93,6 +99,7 @@ export default function UpcomingCourses() {
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Full NBR syllabus coverage',
                 'Previous year question analysis',
@@ -111,6 +118,7 @@ export default function UpcomingCourses() {
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'VAT & SD Act 2012 overview',
                 'Key sections & definitions',
@@ -127,6 +135,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Mushak 9.1 return filing',
                 'Input tax credit adjustments',
@@ -143,6 +152,7 @@ export default function UpcomingCourses() {
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'VAT & SD Act 2012 deep dive',
                 'Practical Mushak applications',
@@ -159,6 +169,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'VDS rules & rates',
                 'Deduction procedures',
@@ -175,6 +186,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Raw material cost calculation',
                 'Mushak 4.3 form filing',
@@ -191,6 +203,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'VAT-compliant bookkeeping',
                 'Purchase & sales records',
@@ -209,6 +222,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'e-GP contractor registration',
                 'Tender document preparation',
@@ -227,6 +241,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Customs valuation methods',
                 'HS Code classification rules',
@@ -243,6 +258,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'L/C opening & document scrutiny',
                 'Incoterms 2020 & IRC/ERC rules',
@@ -261,6 +277,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Land mutation process',
                 'Porcha & record retrieval',
@@ -279,6 +296,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Bangladesh Labour Act overview',
                 'HR compliance procedures',
@@ -297,6 +315,7 @@ export default function UpcomingCourses() {
             mode: 'Online (Live)',
             status: 'Upcoming',
             price: 'TBA',
+            isEnrollable: false,
             features: [
                 'Income Tax & VAT rate changes',
                 'Corporate compliance impact',
@@ -311,12 +330,17 @@ export default function UpcomingCourses() {
             ? courses
             : courses.filter((course) => course.category === activeTab);
 
-    const handleEnrollClick = () => {
-        setShowEnrollMessage(true);
-
-        setTimeout(() => {
-            setShowEnrollMessage(false);
-        }, 3000);
+    const handleEnrollClick = (course) => {
+        if (course.isEnrollable) {
+            // Navigate to enrollment page for enrollable courses
+            router.push(`/upcoming-courses/enroll?course=${encodeURIComponent(course.title)}`);
+        } else {
+            // Show "Coming Soon" message for non-enrollable courses
+            setShowEnrollMessage(true);
+            setTimeout(() => {
+                setShowEnrollMessage(false);
+            }, 3000);
+        }
     };
 
     return (
@@ -787,7 +811,7 @@ export default function UpcomingCourses() {
 
 
                                     <button
-                                        onClick={handleEnrollClick}
+                                        onClick={() => handleEnrollClick(selectedCourse)}
                                         className="
                                             px-5 py-3
                                             bg-[#0f2347]
