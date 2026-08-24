@@ -25,7 +25,7 @@ export default function UpcomingCourses() {
     const [showEnrollMessage, setShowEnrollMessage] = useState(false);
 
     const courses = [
-        // ============= INCOME TAX (4 Courses) =============
+        // ============= INCOME TAX =============
         {
             id: 1,
             category: 'Income Tax',
@@ -47,17 +47,20 @@ export default function UpcomingCourses() {
             id: 2,
             category: 'Income Tax',
             title: 'Individual Income Tax Return Filling',
-            subtitle: 'Hands-on practical training for corporate income tax return submission.',
+            subtitle: '3-Day Online Training Session - Designed Exclusively for Freshers',
             image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
-            mode: 'Online / Hybrid',
-            status: 'Upcoming',
-            price: 'TBA',
+            mode: 'Online',
+            status: 'Enrolling',
+            price: 'BDT 3,000',
             isEnrollable: true,
+            dates: '11.09.2026, 12.09.2026 & 15.09.2026',
+            time: '9:00 PM to 11:00 PM',
             features: [
-                'Individual return filing (IT-11GA)',
-                'Tax calculation methods',
-                'Practical case studies',
-                'Hands-on training'
+                'Detail Discussion on Heads of Income',
+                'Allowable Expenses & Exemptions',
+                'Allowable Investment & Tax Rebate',
+                'Calculation of Total Income & Tax Liability',
+                'e-Return live demo'
             ]
         },
         {
@@ -111,7 +114,7 @@ export default function UpcomingCourses() {
             ]
         },
 
-        // ============= VAT (6 Courses) =============
+        // ============= VAT =============
         {
             id: 6,
             category: 'VAT',
@@ -215,7 +218,7 @@ export default function UpcomingCourses() {
             ]
         },
 
-        // ============= EGP (e-Procurement) (1 Course) =============
+        // ============= EGP =============
         {
             id: 12,
             category: 'EGP (e-Procurement)',
@@ -234,7 +237,7 @@ export default function UpcomingCourses() {
             ]
         },
 
-        // ============= CUSTOMS (2 Courses) =============
+        // ============= CUSTOMS =============
         {
             id: 13,
             category: 'Customs',
@@ -270,7 +273,7 @@ export default function UpcomingCourses() {
             ]
         },
 
-        // ============= LAND (1 Course) =============
+        // ============= LAND =============
         {
             id: 15,
             category: 'Land',
@@ -289,7 +292,7 @@ export default function UpcomingCourses() {
             ]
         },
 
-        // ============= LABOUR LAW (1 Course) =============
+        // ============= LABOUR LAW =============
         {
             id: 16,
             category: 'Labour Law',
@@ -308,7 +311,7 @@ export default function UpcomingCourses() {
             ]
         },
 
-        // ============= FINANCE ACT (1 Course) =============
+        // ============= FINANCE ACT =============
         {
             id: 17,
             category: 'Finance Act',
@@ -418,14 +421,12 @@ export default function UpcomingCourses() {
                                     <img src={course.image} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
 
-                                    {/* Category */}
                                     <div className="absolute top-3 left-3">
                                         <span className="px-2.5 py-1 rounded-md bg-white/95 text-[#0f2347] text-[9px] font-black uppercase tracking-wider shadow-sm">
                                             {course.category}
                                         </span>
                                     </div>
 
-                                    {/* Status + Enroll Badge */}
                                     <div className="absolute bottom-3 left-3 flex gap-2 flex-wrap">
                                         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-600 text-white text-[9px] font-bold shadow-md">
                                             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
@@ -459,9 +460,19 @@ export default function UpcomingCourses() {
                                     <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
                                         <div className="flex items-center justify-between text-[10px]">
                                             <span className="flex items-center gap-1.5 text-slate-500">
-                                                <Calendar className="w-3.5 h-3.5 text-emerald-600" /> Start Date
+                                                <Calendar className="w-3.5 h-3.5 text-emerald-600" /> Dates
                                             </span>
-                                            <span className="font-bold text-slate-800">TBA</span>
+                                            <span className="font-bold text-slate-800 text-right max-w-[120px] truncate">
+                                                {course.dates || 'TBA'}
+                                            </span>
+                                        </div>
+                                        <div className="flex items-center justify-between text-[10px]">
+                                            <span className="flex items-center gap-1.5 text-slate-500">
+                                                <Clock className="w-3.5 h-3.5 text-emerald-600" /> Time
+                                            </span>
+                                            <span className="font-bold text-slate-800 text-right max-w-[100px] truncate">
+                                                {course.time || 'TBA'}
+                                            </span>
                                         </div>
                                         <div className="flex items-center justify-between text-[10px]">
                                             <span className="flex items-center gap-1.5 text-slate-500">
@@ -514,13 +525,23 @@ export default function UpcomingCourses() {
                             <div className="grid grid-cols-2 gap-3">
                                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                                     <Calendar className="w-4 h-4 text-emerald-600 mb-2" />
-                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Start Date</p>
-                                    <p className="text-sm font-bold text-[#0f2347] mt-1">To Be Announced</p>
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Dates</p>
+                                    <p className="text-sm font-bold text-[#0f2347] mt-1">{selectedCourse.dates || 'To Be Announced'}</p>
+                                </div>
+                                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                    <Clock className="w-4 h-4 text-emerald-600 mb-2" />
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Time</p>
+                                    <p className="text-sm font-bold text-[#0f2347] mt-1">{selectedCourse.time || 'TBA'}</p>
                                 </div>
                                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                                     <Users className="w-4 h-4 text-emerald-600 mb-2" />
-                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Learning Mode</p>
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Mode</p>
                                     <p className="text-sm font-bold text-[#0f2347] mt-1">{selectedCourse.mode}</p>
+                                </div>
+                                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                    <Tag className="w-4 h-4 text-emerald-600 mb-2" />
+                                    <p className="text-[10px] text-slate-400 uppercase font-bold">Course Fee</p>
+                                    <p className="text-sm font-black text-emerald-700 mt-1">{selectedCourse.price}</p>
                                 </div>
                             </div>
 
