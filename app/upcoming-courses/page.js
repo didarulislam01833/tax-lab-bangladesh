@@ -42,21 +42,34 @@ export default function UpcomingCourses() {
         {
             id: 2,
             category: 'Income Tax',
-            title: 'Income Tax Return Filing – Practical Masterclass',
-            subtitle: 'Hands-on practical training for individual and corporate income tax return submission.',
+            title: 'Individual Income Tax Return Filling ',
+            subtitle: 'Hands-on practical training for corporate income tax return submission.',
             image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
             mode: 'Online / Hybrid',
             status: 'Upcoming',
             price: 'TBA',
             features: [
                 'Individual return filing (IT-11GA)',
+
+            ]
+        },
+        {
+            id: 3,
+            category: 'Income Tax',
+            title: 'Corporate Tax Return Compliance & Return Filling',
+            subtitle: 'Hands-on practical training for corporate income tax return submission.',
+            image: 'https://images.unsplash.com/photo-1554224154-22dec7ec8818?q=80&w=900&auto=format&fit=crop',
+            mode: 'Online',
+            status: 'Upcoming',
+            price: 'TBA',
+            features: [
                 'Corporate tax return preparation',
                 'Tax rebate & wealth reconciliation',
                 'Investment proof documentation'
             ]
         },
         {
-            id: 3,
+            id: 4,
             category: 'Income Tax',
             title: 'TDS (Tax Deduction at Source) – Rules & Compliance',
             subtitle: 'Master TDS rules, rates, deductions and compliance requirements for businesses.',
@@ -72,7 +85,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 4,
+            id: 5,
             category: 'Income Tax',
             title: 'ITP (Income Tax Practitioner) Exam – Full Preparation Course',
             subtitle: 'Comprehensive preparation for the NBR Income Tax Practitioner licensing examination.',
@@ -90,7 +103,7 @@ export default function UpcomingCourses() {
 
         // ============= VAT (6 Courses) =============
         {
-            id: 5,
+            id: 6,
             category: 'VAT',
             title: 'Value Added Tax & Supplementary Duty Act, 2012 – Comprehensive Overview',
             subtitle: 'Complete professional understanding of the VAT & SD Act 2012 from basics to advanced.',
@@ -106,7 +119,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 6,
+            id: 7,
             category: 'VAT',
             title: 'VAT Return Filing – Step-by-Step Guide',
             subtitle: 'Step-by-step professional training on monthly VAT return preparation and filing.',
@@ -122,7 +135,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 7,
+            id: 8,
             category: 'VAT',
             title: 'VAT Consultant Exam – Preparation Course',
             subtitle: 'Targeted professional coaching for the NBR VAT Consultant licensing examination.',
@@ -138,7 +151,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 8,
+            id: 9,
             category: 'VAT',
             title: 'VDS (VAT Deduction at Source) – Complete Guide',
             subtitle: 'Complete practical training on VAT deduction at source rules and compliance procedures.',
@@ -154,7 +167,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 9,
+            id: 10,
             category: 'VAT',
             title: 'Master class on Input-output co-efficient (Mushak 4.3)',
             subtitle: 'Practical guide to Mushak 4.3 declaration, calculation.',
@@ -170,7 +183,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 10,
+            id: 11,
             category: 'VAT',
             title: 'Practical Training on VAT Book Keeping',
             subtitle: 'Professional book keeping training for VAT compliance and accurate record maintenance.',
@@ -188,7 +201,7 @@ export default function UpcomingCourses() {
 
         // ============= EGP (e-Procurement) (1 Course) =============
         {
-            id: 11,
+            id: 12,
             category: 'EGP (e-Procurement)',
             title: 'e-Procurement (EGP) – Complete Online Training',
             subtitle: 'Hands-on professional training on government electronic procurement operations.',
@@ -206,7 +219,7 @@ export default function UpcomingCourses() {
 
         // ============= CUSTOMS (2 Courses) =============
         {
-            id: 12,
+            id: 13,
             category: 'Customs',
             title: 'Customs Valuation & HS Code Classification – Masterclass',
             subtitle: 'Professional training on customs valuation methods and accurate HS code classification.',
@@ -222,7 +235,7 @@ export default function UpcomingCourses() {
             ]
         },
         {
-            id: 13,
+            id: 14,
             category: 'Customs',
             title: 'LC & Commercial Management – Practical Course',
             subtitle: 'Practical training on LC, import-export operations and banking procedures.',
@@ -240,7 +253,7 @@ export default function UpcomingCourses() {
 
         // ============= LAND (1 Course) =============
         {
-            id: 14,
+            id: 15,
             category: 'Land',
             title: 'Land Management – Mutation, Porcha & Records',
             subtitle: 'Complete practical training on land mutation, porcha, records and management procedures.',
@@ -258,7 +271,7 @@ export default function UpcomingCourses() {
 
         // ============= LABOUR LAW (1 Course) =============
         {
-            id: 15,
+            id: 16,
             category: 'Labour Law',
             title: 'Labour Law – HR Compliance & Practical Application',
             subtitle: 'Practical training on Bangladesh Labour Law, HR compliance and workplace regulations.',
@@ -276,7 +289,7 @@ export default function UpcomingCourses() {
 
         // ============= FINANCE ACT (1 Course) =============
         {
-            id: 16,
+            id: 17,
             category: 'Finance Act',
             title: 'Finance Act – 2026',
             subtitle: 'Professional analysis of major direct and indirect tax amendments under the Finance Act.',
