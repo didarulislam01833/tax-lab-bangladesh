@@ -45,10 +45,6 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <p className="text-slate-300 text-sm leading-relaxed max-w-sm">
-                            Empowering corporate professionals, business owners, and tax practitioners across Bangladesh through specialized Income Tax, VAT, Customs, and Corporate Legal Compliance advisory & training.
-                        </p>
-
                         {/* Gorgeous Social & Direct Action Buttons */}
                         <div className="pt-2 flex flex-wrap items-center gap-3">
                             {/* WhatsApp Button */}
