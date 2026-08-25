@@ -25,19 +25,22 @@ export default function Footer() {
                             </h3>
                         </div>
 
-                        {/* Bhuiyan & Associates Logo */}
-                        <div className="flex items-center gap-3 bg-white/5 border border-slate-700/50 rounded-xl p-3 w-fit">
+                        {/* Bhuiyan & Associates Logo - Large & Professional */}
+                        <div className="flex items-center gap-5 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 w-fit hover:border-emerald-500/40 transition-all duration-300">
                             <img
-                                src="/logo2.jpeg"
+                                src="/logo2.png"
                                 alt="Bhuiyan & Associates"
-                                className="w-14 h-14 object-contain rounded-lg bg-white p-1"
+                                className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-xl"
                             />
                             <div>
-                                <p className="text-slate-400 text-[10px] uppercase tracking-wider">
+                                <p className="text-slate-400 text-[10px] uppercase tracking-widest font-semibold">
                                     An enterprise of
                                 </p>
-                                <p className="text-white text-sm font-bold leading-tight mt-0.5">
+                                <p className="text-white text-lg sm:text-xl font-black leading-tight mt-1">
                                     Bhuiyan & Associates
+                                </p>
+                                <p className="text-slate-500 text-xs mt-1.5">
+                                    Chartered Accountants & Consultants
                                 </p>
                             </div>
                         </div>

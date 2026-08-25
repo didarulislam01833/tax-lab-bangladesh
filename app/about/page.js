@@ -113,7 +113,6 @@ export default function About() {
 
             {/* Classy Animated Slider Banner Section */}
             <section className="relative py-28 lg:py-36 bg-[#0B1528] text-white overflow-hidden">
-                {/* Background Grid Pattern */}
                 <div
                     className="absolute inset-0 opacity-[0.04] pointer-events-none"
                     style={{
@@ -121,19 +120,12 @@ export default function About() {
                         backgroundSize: '24px 24px'
                     }}
                 />
-
-                {/* Dynamic Ambient Light Glowing Orbs */}
                 <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-emerald-500/15 rounded-full blur-[140px] pointer-events-none animate-pulse" />
                 <div className="absolute top-1/2 -right-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
                 <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[420px]">
-
-                        {/* Slide Content */}
-                        <div
-                            className={`lg:col-span-7 space-y-8 text-center lg:text-left transition-all duration-500 transform ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-                                }`}
-                        >
+                        <div className={`lg:col-span-7 space-y-8 text-center lg:text-left transition-all duration-500 transform ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-full text-xs font-semibold tracking-wider uppercase backdrop-blur-md shadow-inner">
                                 <Sparkles className="w-4 h-4 text-emerald-400 animate-spin" style={{ animationDuration: '8s' }} />
                                 {activeSlide.badge}
@@ -151,30 +143,19 @@ export default function About() {
                             </p>
 
                             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                                <a
-                                    href={activeSlide.primaryCTA.href}
-                                    className="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold rounded-xl text-sm shadow-lg shadow-emerald-500/20 transition-all duration-300 flex items-center gap-2 group"
-                                >
+                                <a href={activeSlide.primaryCTA.href} className="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold rounded-xl text-sm shadow-lg shadow-emerald-500/20 transition-all duration-300 flex items-center gap-2 group">
                                     {activeSlide.primaryCTA.label}
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </a>
-                                <a
-                                    href={activeSlide.secondaryCTA.href}
-                                    className="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold rounded-xl text-sm transition-all duration-300"
-                                >
+                                <a href={activeSlide.secondaryCTA.href} className="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold rounded-xl text-sm transition-all duration-300">
                                     {activeSlide.secondaryCTA.label}
                                 </a>
                             </div>
                         </div>
 
-                        {/* Interactive Hero Glassmorphism Card */}
-                        <div
-                            className={`lg:col-span-5 relative flex justify-center transition-all duration-500 transform ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-                                }`}
-                        >
+                        <div className={`lg:col-span-5 relative flex justify-center transition-all duration-500 transform ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
                             <div className="relative w-full max-w-md">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 rounded-3xl blur-2xl pointer-events-none" />
-
                                 <div className="relative bg-slate-900/70 border border-slate-700/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">
                                     <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                                         <div className="flex items-center gap-3">
@@ -192,7 +173,6 @@ export default function About() {
                                         </span>
                                     </div>
 
-                                    {/* Feature Cards Grid inside Banner */}
                                     <div className="grid grid-cols-2 gap-3">
                                         {activeSlide.cardItems.map((item, idx) => {
                                             const IconComponent = item.icon;
@@ -216,12 +196,9 @@ export default function About() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                    {/* Slider Navigation & Indicators */}
                     <div className="flex items-center justify-between pt-12 border-t border-slate-800/60 mt-8">
-                        {/* Slide Indicators */}
                         <div className="flex items-center gap-2">
                             {bannerSlides.map((_, index) => (
                                 <button
@@ -233,46 +210,32 @@ export default function About() {
                                             setTimeout(() => setIsAnimating(false), 500);
                                         }
                                     }}
-                                    className={`h-2.5 rounded-full transition-all duration-300 ${currentSlide === index ? 'w-8 bg-emerald-400' : 'w-2.5 bg-slate-700 hover:bg-slate-500'
-                                        }`}
+                                    className={`h-2.5 rounded-full transition-all duration-300 ${currentSlide === index ? 'w-8 bg-emerald-400' : 'w-2.5 bg-slate-700 hover:bg-slate-500'}`}
                                     aria-label={`Go to slide ${index + 1}`}
                                 />
                             ))}
                         </div>
-
-                        {/* Navigation Arrows */}
                         <div className="flex items-center gap-3">
-                            <button
-                                onClick={handlePrevSlide}
-                                className="p-2.5 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl border border-slate-700 transition-all duration-200"
-                                aria-label="Previous Slide"
-                            >
+                            <button onClick={handlePrevSlide} className="p-2.5 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl border border-slate-700 transition-all duration-200" aria-label="Previous Slide">
                                 <ChevronLeft className="w-5 h-5" />
                             </button>
-                            <button
-                                onClick={handleNextSlide}
-                                className="p-2.5 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl border border-slate-700 transition-all duration-200"
-                                aria-label="Next Slide"
-                            >
+                            <button onClick={handleNextSlide} className="p-2.5 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl border border-slate-700 transition-all duration-200" aria-label="Next Slide">
                                 <ChevronRight className="w-5 h-5" />
                             </button>
                         </div>
                     </div>
-
                 </div>
             </section>
 
-            {/* ===== About Us Introduction Section ===== */}
+            {/* About Us Introduction Section */}
             <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
                 <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
                     <div className="max-w-4xl mx-auto text-center space-y-6">
-                        {/* Decorative Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-[#0c7844] rounded-full text-xs font-bold tracking-wider uppercase border border-emerald-200 shadow-sm">
                             <Sparkles className="w-4 h-4 text-emerald-600" />
                             About Us
                         </div>
 
-                        {/* Heading */}
                         <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
                             The Story Behind <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0c7844] via-teal-600 to-[#11244e]">
@@ -280,7 +243,6 @@ export default function About() {
                             </span>
                         </h2>
 
-                        {/* Main Content */}
                         <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xl p-8 sm:p-12 text-left space-y-6">
                             <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
                                 <strong className="text-slate-900">TaxLab Bangladesh</strong> is a specialized training center founded as an enterprise of{' '}
@@ -288,18 +250,21 @@ export default function About() {
                             </p>
 
                             {/* Bhuiyan & Associates Logo */}
-                            <div className="flex items-center gap-4 bg-slate-50 border border-slate-200 rounded-2xl p-4 w-fit">
+                            <div className="flex items-center gap-6 bg-slate-50 border border-slate-200 rounded-2xl p-6 w-fit">
                                 <img
-                                    src="/logo2.jpeg"
+                                    src="/logo2.png"
                                     alt="Bhuiyan & Associates"
-                                    className="w-16 h-16 object-contain rounded-xl bg-white p-1 border border-slate-200"
+                                    className="w-28 h-28 sm:w-32 sm:h-32 object-contain rounded-lg"
                                 />
                                 <div>
-                                    <p className="text-slate-500 text-[10px] uppercase tracking-wider">
+                                    <p className="text-slate-500 text-[11px] uppercase tracking-widest font-semibold">
                                         An enterprise of
                                     </p>
-                                    <p className="text-slate-900 text-lg font-black leading-tight">
+                                    <p className="text-slate-900 text-xl sm:text-2xl font-black leading-tight mt-1">
                                         Bhuiyan & Associates
+                                    </p>
+                                    <p className="text-slate-500 text-sm mt-2">
+                                        Chartered Accountants & Consultants
                                     </p>
                                 </div>
                             </div>
@@ -308,7 +273,6 @@ export default function About() {
                                 Recognizing the need for practical, high-quality tax education, Bhuiyan & Associates leveraged its years of consultancy expertise to launch TaxLab. Our goal is to train the next generation of professionals using real-world insights from our established consultancy practice.
                             </p>
 
-                            {/* Visual divider with key highlights */}
                             <div className="pt-4 flex flex-wrap items-center gap-3 border-t border-slate-100 mt-4">
                                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">
                                     <ShieldCheck className="w-3.5 h-3.5" />
@@ -348,7 +312,6 @@ export default function About() {
                 </div>
 
                 <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xl p-8 sm:p-12 space-y-12 divide-y divide-slate-100">
-                    {/* Training Programs */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 bg-emerald-100 text-[#0c7844] rounded-xl">
@@ -387,7 +350,6 @@ export default function About() {
                         </ul>
                     </div>
 
-                    {/* Advisory Services */}
                     <div className="pt-10 space-y-6">
                         <div className="flex items-center gap-3">
                             <div className="p-2.5 bg-blue-100 text-[#11244e] rounded-xl">
