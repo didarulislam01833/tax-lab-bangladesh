@@ -264,7 +264,7 @@ export default function About() {
                                         Bhuiyan & Associates
                                     </p>
                                     <p className="text-slate-500 text-sm mt-2">
-                                        Chartered Accountants & Consultants
+                                        Comapany Affairs, VAT & Tax Consultantancy Firm
                                     </p>
                                 </div>
                             </div>

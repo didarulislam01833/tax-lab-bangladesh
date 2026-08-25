@@ -40,7 +40,7 @@ export default function Footer() {
                                     Bhuiyan & Associates
                                 </p>
                                 <p className="text-slate-500 text-xs mt-1.5">
-                                    Chartered Accountants & Consultants
+                                    Comapany Affairs, VAT & Tax Consultantancy Firm
                                 </p>
                             </div>
                         </div>
