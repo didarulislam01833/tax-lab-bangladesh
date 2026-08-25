@@ -88,8 +88,6 @@ function EnrollForm() {
 
         if (!formData.bkashTrxID.trim()) {
             newErrors.bkashTrxID = 'Bkash Transaction ID is required';
-        } else if (formData.bkashTrxID.trim().length < 8) {
-            newErrors.bkashTrxID = 'Please enter a valid Bkash Transaction ID';
         }
 
         return newErrors;
