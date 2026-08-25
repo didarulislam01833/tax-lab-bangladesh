@@ -25,6 +25,23 @@ export default function Footer() {
                             </h3>
                         </div>
 
+                        {/* Bhuiyan & Associates Logo */}
+                        <div className="flex items-center gap-3 bg-white/5 border border-slate-700/50 rounded-xl p-3 w-fit">
+                            <img
+                                src="/logo2.jpeg"
+                                alt="Bhuiyan & Associates"
+                                className="w-14 h-14 object-contain rounded-lg bg-white p-1"
+                            />
+                            <div>
+                                <p className="text-slate-400 text-[10px] uppercase tracking-wider">
+                                    An enterprise of
+                                </p>
+                                <p className="text-white text-sm font-bold leading-tight mt-0.5">
+                                    Bhuiyan & Associates
+                                </p>
+                            </div>
+                        </div>
+
                         <p className="text-slate-300 text-sm leading-relaxed max-w-sm">
                             Empowering corporate professionals, business owners, and tax practitioners across Bangladesh through specialized Income Tax, VAT, Customs, and Corporate Legal Compliance advisory & training.
                         </p>
